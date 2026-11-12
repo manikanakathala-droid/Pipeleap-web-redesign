@@ -231,6 +231,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   #opening .op__intro { grid-column: 1 / -1; grid-row: 2; }
   #opening .op__strands { grid-row: 3; grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 14px; }
   #opening .op__strands li + li { margin-top: 0; }
+  #opening .op__spacer { display: none; }
   #opening .op__second-inner { grid-template-columns: 1fr; padding-bottom: 28px; }
 }
 @media (max-height: 760px) and (min-width: 761px) {
@@ -628,13 +629,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       <h1 class="op__title m-text-7" style="--len:8" aria-label="Pipeleap"><span class="op-cut"><span class="op-cut__in">Pipe</span></span><span class="op-window"><span class="op-window__in"><img class="op-window__film" src="assets/hero.svg" alt="" width="1600" height="1068" fetchpriority="high"><span class="op-window__word">leap</span></span></span></h1>
       <div class="op__info">
         <p class="op__where m-text-3"><span>Less admin</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg><span>More selling time</span></p>
-        <ul class="op__strands m-text-3" aria-label="Works with">
-          <li>HubSpot</li>
-          <li>Apollo</li>
-          <li>Gmail</li>
-          <li>Outlook</li>
-          <li>LinkedIn</li>
-        </ul>
+        <div class="op__spacer" aria-hidden="true"></div>
         <div class="op__intro">
           <p class="m-text-2">Your sales stack is expensive. Are you getting everything out of it?</p>
           <p class="m-text">Pipeleap connects your sales technology, unifies the information inside it and takes on the operational work between tools, so your team spends less time managing software and more time selling.</p>
