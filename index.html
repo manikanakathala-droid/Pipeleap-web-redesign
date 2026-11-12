@@ -247,6 +247,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #manifesto .mf__aside { display: grid; grid-template-columns: minmax(160px, 1fr) 1.6fr 1.6fr 0.8fr; gap: 24px; margin-top: clamp(48px, 6vw, 88px); align-items: start; }
 #manifesto .mf__photo { grid-column: 1; aspect-ratio: 3 / 4; border-radius: var(--radius-1); overflow: hidden; max-width: 220px; }
 #manifesto .mf__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 30%; }
+#manifesto .mf__aside > .mf__copy:first-child { grid-column: 2; }
 #manifesto .mf__copy { display: grid; gap: 20px; justify-items: start; color: var(--color-4); }
 #manifesto .mf__sign { display: grid; gap: 4px; color: var(--color-2); }
 @media (max-width: 760px) {
@@ -254,6 +255,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   #manifesto .mf__note { padding-top: 0; }
   #manifesto .mf__aside { grid-template-columns: 1fr; gap: 28px; }
   #manifesto .mf__photo { max-width: 150px; }
+  #manifesto .mf__aside > .mf__copy:first-child { grid-column: auto; }
 }
 }
 </style>
@@ -668,7 +670,6 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     <p class="mf__statement m-text-5" data-8b-split="words">More sales tools were supposed to make selling easier. Instead, someone has to hold them all together, and that someone is your rep.</p>
   </div>
   <div class="mf__aside">
-    <figure class="mf__photo"><img src="assets/mark.svg" alt="The Pipeleap logo and name" width="600" height="800" loading="lazy"></figure>
     <div class="mf__copy">
       <p class="m-text">The cost isn’t on the invoice. Your software budget shows what you pay for each tool. It does not show the hours your team spends carrying information from one to the next, or the capabilities that never get used because of it.</p>
       <p class="m-text mf__sign"><span class="m-text-6">Pipeleap</span><span class="m-text-3">Sales productivity and stack optimization</span></p>
