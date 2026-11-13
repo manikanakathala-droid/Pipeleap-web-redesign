@@ -376,7 +376,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #venues .vn__head { display: grid; grid-template-columns: auto 1fr; gap: 24px 40px; align-items: end; }
 #venues .vn__title { font-size: min(13vw, 22svh, calc((100vw - 2 * var(--space-1)) / (var(--len) * 1.2))); }
 #venues .vn__lead { max-width: 22em; justify-self: end; padding-bottom: 0.4em; }
-#venues .vn__track { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 24px 20px; padding-inline: var(--space-1); }
+#venues .vn__track { display: flex; gap: 20px; padding-inline: var(--space-1); scroll-padding-inline: var(--space-1); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; overscroll-behavior-x: contain; }
+#venues .vn__track::-webkit-scrollbar { display: none; }
+#venues .vn__track > .vn__panel { flex: none; width: min(720px, 62vw, calc((100svh - 260px) * 1.6)); min-width: min(320px, 86vw); scroll-snap-align: start; }
+#venues .vn__nav { display: flex; align-items: center; justify-content: flex-end; gap: 14px; margin-bottom: -8px; }
+#venues.vn--fits .vn__nav { visibility: hidden; }
+#venues .vn__btn { width: 44px; height: 44px; border: 0; cursor: pointer; transition: opacity .2s, background-color .2s; }
+#venues .vn__btn:disabled { opacity: .3; cursor: default; }
+#venues .vn__btn:not(:disabled):hover { background: var(--color-7); color: #fff; }
+#venues .vn__dots { display: flex; gap: 6px; }
+#venues .vn__dots span { width: 8px; height: 8px; border-radius: 4px; background: var(--color-6); transition: width .3s, background-color .3s; }
+#venues .vn__dots span.on { width: 22px; background: var(--color-7); }
 #venues .vn__panel { display: grid; gap: 16px; align-content: start; }
 #venues .vn__photo { aspect-ratio: 16 / 10; border-radius: var(--radius-1); overflow: hidden; }
 #venues .vn__photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -389,7 +399,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 760px) {
   #venues .vn__head { grid-template-columns: 1fr; }
   #venues .vn__lead { justify-self: start; }
-  #venues .vn__track { grid-template-columns: 1fr; gap: 32px; }
+  #venues .vn__track { gap: 14px; }
+  #venues .vn__track > .vn__panel { width: 86vw; }
 }
 }
 </style>
@@ -907,14 +918,19 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   </ol>
 </section>
 
-<!-- venues: the three value pillars as panels with an illustration, a name, a label and a description; a static grid, all three always in view -->
+<!-- venues: the three value pillars as panels with an illustration, a name, a label and a description; a slider with previous / next buttons, dots, swipe and arrow keys -->
 <section id="venues" class="vn" data-8b-section="venues">
   <div class="vn__stage">
     <div class="vn__head wrap">
       <h2 class="vn__title m-text-4" style="--len:8" data-8b-motion="cut" data-8b-enter="90%">Outcomes</h2>
       <p class="vn__lead m-text-2">Your sales technology budget should produce more than software subscriptions.</p>
     </div>
-    <ul class="vn__track" data-8b-items=":scope > .vn__panel">
+    <div class="vn__nav wrap" role="group" aria-label="Outcomes slider">
+      <button class="m-icon vn__btn" type="button" data-dir="-1" aria-label="Previous outcome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H6M11 6l-6 6 6 6"/></svg></button>
+      <div class="vn__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+      <button class="m-icon vn__btn" type="button" data-dir="1" aria-label="Next outcome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <ul class="vn__track" data-8b-items=":scope > .vn__panel" tabindex="0" aria-label="Outcomes">
       <li class="vn__panel">
         <figure class="vn__photo"><img src="assets/pillar-time.svg" alt="Pipeleap automation card: research, prep and drafts ready in advance; follow-ups flagged with who, why and when; missed replies and no-shows become next steps; CRM updated without anyone typing; every conversation starts with context; nothing reaches a buyer without approval. Beside a clock." width="1200" height="750" loading="lazy"></figure>
         <div class="vn__text">
@@ -1139,6 +1155,18 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     out.classList.toggle('is-hit', n >= 2);
     out.textContent = n >= 2 ? 'That’s the gap Pipeleap closes.' : n === 1 ? 'One so far. Keep going.' : 'Tick what applies to your team.';
   }));
+})();
+</script>
+<script data-8b-part="section-script:venues-slider">
+(() => {
+  const sec = document.getElementById('venues'); if (!sec) return;
+  const track = sec.querySelector('.vn__track'), panels = [...track.children], dots = [...sec.querySelectorAll('.vn__dots span')], [prev, next] = sec.querySelectorAll('.vn__btn');
+  const current = () => { const x = track.scrollLeft; let best = 0; panels.forEach((p, i) => { if (Math.abs(p.offsetLeft - track.offsetLeft - x - parseFloat(getComputedStyle(track).paddingLeft)) < Math.abs(panels[best].offsetLeft - track.offsetLeft - x - parseFloat(getComputedStyle(track).paddingLeft))) best = i; }); return best; };
+  const update = () => { sec.classList.toggle('vn--fits', track.scrollWidth <= track.clientWidth + 4); const i = current(), end = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4; dots.forEach((d, k) => d.classList.toggle('on', k === (end ? panels.length - 1 : i))); prev.disabled = track.scrollLeft <= 4; next.disabled = end; };
+  const go = dir => { const i = Math.max(0, Math.min(panels.length - 1, current() + dir)); track.scrollTo({ left: panels[i].offsetLeft - panels[0].offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); };
+  prev.addEventListener('click', () => go(-1)); next.addEventListener('click', () => go(1));
+  track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); } });
+  track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true }); addEventListener('resize', update); update();
 })();
 </script>
 <script data-8b-part="section-script:passes">
