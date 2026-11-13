@@ -371,7 +371,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #venues { padding-bottom: var(--space-2); }
 #venues .vn__stage { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 4vw, 48px); overflow-x: clip; }
 #venues .vn__head { display: grid; grid-template-columns: auto 1fr; gap: 24px 40px; align-items: end; }
-#venues .vn__title { font-size: min(13vw, calc((100vw - 2 * var(--space-1)) / (var(--len) * 1.2))); }
+#venues .vn__title { font-size: min(13vw, 22svh, calc((100vw - 2 * var(--space-1)) / (var(--len) * 1.2))); }
 #venues .vn__lead { max-width: 22em; justify-self: end; padding-bottom: 0.4em; }
 #venues .vn__track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-inline: var(--space-1); }
 #venues .vn__panel { display: grid; gap: 16px; align-content: start; }
@@ -582,10 +582,15 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (prefers-reduced-motion: no-preference) {
   [data-8b-live] #venues .vn__stage { min-height: 100svh; align-content: center; padding-block: 72px 24px; }
   [data-8b-live] #venues .vn__track { display: flex; width: max-content; gap: 20px; }
-  [data-8b-live] #venues .vn__panel { width: min(50vw, 720px); }
+  [data-8b-live] #venues .vn__panel { width: var(--vn-panel-w, min(50vw, 720px)); }
 }
 @media (prefers-reduced-motion: no-preference) and (max-width: 760px) {
-  [data-8b-live] #venues .vn__panel { width: 80vw; }
+  [data-8b-live] #venues .vn__panel { width: var(--vn-panel-w, 80vw); }
+}
+@media (prefers-reduced-motion: no-preference) and (max-height: 760px) {
+  [data-8b-live] #venues .vn__stage { padding-block: 24px 12px; gap: 20px; }
+  [data-8b-live] #venues .vn__panel { gap: 10px; }
+  [data-8b-live] #venues .vn__text { gap: 4px; }
 }
 }
 @layer scenes {
@@ -1376,7 +1381,20 @@ motionKit.scene("premiere", () => {
 motionKit.scene("venues", () => {
   { const stage = document.querySelector("#venues .vn__stage"), room = document.createElement('div'), space = document.createElement('div'); room.className = "vn-stage-room"; space.className = "vn-stage-room-space"; space.setAttribute('aria-hidden', 'true'); stage.before(room); room.append(stage, space);
     const track = stage.querySelector(".vn__track");
-    motionKit.measure(() => motionKit.set(room, { "--venues-travel": `${Math.max(0, track.scrollWidth - document.documentElement.clientWidth)}px` })); }
+    motionKit.measure(() => {
+      // Keep the whole pinned stage inside the window: on short screens shrink the panels so the
+      // images and their text stay visible while the row slides, instead of running off the bottom.
+      stage.style.removeProperty('--vn-panel-w');
+      const panel = track.querySelector('.vn__panel');
+      for (let i = 0; i < 6 && panel; i++) {
+        const over = stage.offsetHeight - window.innerHeight; if (over <= 0) break;
+        const photo = panel.querySelector('.vn__photo'), ratio = photo.offsetWidth / photo.offsetHeight;
+        const w = Math.max(240, Math.floor((photo.offsetHeight - over - 4) * ratio));
+        if (w >= panel.offsetWidth) break;
+        stage.style.setProperty('--vn-panel-w', w + 'px');
+      }
+      motionKit.set(room, { "--venues-travel": `${Math.max(0, track.scrollWidth - document.documentElement.clientWidth)}px` });
+    }); }
 });
 </script>
 </body>
