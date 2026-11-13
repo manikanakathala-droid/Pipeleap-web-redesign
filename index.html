@@ -1106,21 +1106,21 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   const buyer = sec.querySelector('.op__card'), cards = [...sx.children];
   const layout = () => {
     sx.classList.remove('sx--tri', 'sx--col', 'sx--row', 'sx--tight');
-    cards.forEach(c => { c.style.left = c.style.bottom = c.style.minHeight = ''; });
+    cards.forEach(c => { c.style.left = c.style.bottom = c.style.minHeight = c.style.width = ''; });
     const s = sec.getBoundingClientRect(), b = buyer.getBoundingClientRect(), gutter = parseFloat(getComputedStyle(sec.querySelector('.op__second-inner')).paddingLeft) || 28;
     const room = s.right - gutter - (b.right + 24), base = s.bottom - b.bottom, top = 84, gap = 20;
     if (innerWidth >= 1100 && room >= 420) {
       sx.classList.add('sx--tri');
-      const [qc, bud] = cards, budLeft = s.width - gutter - 420, buyLeft = b.left - s.left;
-      bud.style.left = budLeft + 'px'; bud.style.bottom = base + 'px'; bud.style.minHeight = buyer.offsetHeight + 'px';
-      qc.style.left = Math.round((buyLeft + budLeft) / 2) + 'px';
-      for (const [tight, lift] of [[false, 56], [true, 56], [false, 20], [true, 20]]) {
+      const [qc, bud] = cards, buyLeft = b.left - s.left, budLeft = b.right - s.left + 24;
+      bud.style.left = budLeft + 'px'; bud.style.bottom = base + 'px';
+      qc.style.left = buyLeft + 'px'; qc.style.width = (budLeft + 420 - buyLeft) + 'px';
+      for (const [tight, lift] of [[false, 24], [true, 24]]) {
         sx.classList.toggle('sx--tight', tight); bud.style.minHeight = buyer.offsetHeight + 'px';
         qc.style.bottom = (base + buyer.offsetHeight + lift) + 'px';
         if (qc.getBoundingClientRect().top - s.top >= top) return;
       }
       sx.classList.remove('sx--tight');
-      sx.classList.remove('sx--tri'); cards.forEach(c => { c.style.left = c.style.bottom = c.style.minHeight = ''; });
+      sx.classList.remove('sx--tri'); cards.forEach(c => { c.style.left = c.style.bottom = c.style.minHeight = c.style.width = ''; });
       sx.classList.add('sx--col');
       if (sx.offsetHeight <= s.height - 44 - top) { cards[1].style.minHeight = buyer.offsetHeight + 'px'; if (sx.offsetHeight > s.height - 44 - top) cards[1].style.minHeight = ''; return; }
       sx.classList.remove('sx--col');
