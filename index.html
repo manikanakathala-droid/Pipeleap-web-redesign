@@ -232,13 +232,16 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @keyframes op-drift { from { transform: scaleX(-1) scale(1.08) translate3d(-3.5%, 1.5%, 0); } to { transform: scaleX(-1) scale(1.16) translate3d(3.5%, -2%, 0); } }
 @media (max-width: 760px) {
   #opening .op__first { padding: 84px var(--space-1) 28px; }
-  #opening .op__title { white-space: normal; font-size: min(36vw, calc((100vw - 2 * var(--space-1)) / (var(--len) * 0.29))); line-height: 0.88; }
+  #opening .op__title { white-space: normal; font-size: min(36vw, 17svh, calc((100vw - 2 * var(--space-1)) / (var(--len) * 0.29))); line-height: 0.88; }
   #opening .op-cut { display: block; }
   #opening .op__info { grid-template-columns: 1fr 1fr; gap: 20px 16px; }
   #opening .op__intro { grid-column: 1 / -1; grid-row: 2; }
   #opening .op__strands { grid-row: 3; grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 14px; }
   #opening .op__strands li + li { margin-top: 0; }
   #opening .op__spacer { display: none; }
+  #opening .op__edition { display: none; }
+  #opening .op__info { gap: 14px 16px; }
+  #opening .op__intro { gap: 12px; }
   #opening .op__second-inner { grid-template-columns: 1fr; padding-bottom: 28px; }
 }
 @media (max-height: 760px) and (min-width: 761px) {
@@ -555,6 +558,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (prefers-reduced-motion: no-preference) {
   [data-8b-live] #premiere { height: 200svh; }
   [data-8b-live] #premiere .pr__stage { position: sticky; top: 0; height: 100svh; min-height: 0; }
+  /* The pinned stage is exactly one window tall: let the frame take only the room the text leaves,
+     so the text under it is never pushed off the bottom on shorter windows. */
+  [data-8b-live] #premiere .pr__screen { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; max-height: min(62svh, calc((100vw - 2 * var(--space-1)) / 2.15)); }
+  [data-8b-live] #premiere .pr__frame { aspect-ratio: auto; flex: 1 1 0; min-height: 0; max-height: none; }
+  [data-8b-live] #premiere .pr__info { flex: none; }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 760px) {
+  /* Phones: the text is too long to share one pinned screen with the frame, so the scene plays in normal flow. */
+  [data-8b-live] #premiere { height: auto; }
+  [data-8b-live] #premiere .pr__stage { position: relative; height: auto; min-height: 100svh; }
+  [data-8b-live] #premiere .pr__screen { flex: none; max-height: none; display: block; }
+  [data-8b-live] #premiere .pr__frame { aspect-ratio: 4 / 5; flex: none; max-height: 48svh; }
 }
 }
 @layer scenes {
