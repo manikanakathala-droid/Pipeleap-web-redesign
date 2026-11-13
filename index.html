@@ -630,11 +630,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #opening .sx.sx--row { display: flex; top: 84px; left: 0; right: 0; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 var(--space-1) 12px; scrollbar-width: none; }
 #opening .sx.sx--row::-webkit-scrollbar { display: none; }
 #opening .sx--row .sx__c { flex: none; width: min(86vw, 420px); scroll-snap-align: start; }
-@media (max-width: 760px) {
-  #opening .op__second:has(.sx--row) { height: auto; min-height: 100svh; flex-direction: column; justify-content: flex-end; align-items: stretch; padding-top: 84px; }
-  #opening .sx.sx--row { position: relative; top: auto; order: -1; margin-bottom: 24px; }
-  #opening .sx__checks { grid-template-columns: 1fr; }
-}
+#opening .op__second:has(.sx--row) { height: auto; min-height: 100svh; flex-direction: column; justify-content: flex-end; align-items: stretch; padding-top: 84px; }
+#opening .sx.sx--row { position: relative; top: auto; order: -1; margin-bottom: 24px; }
+@media (max-width: 760px) { #opening .sx__checks { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: no-preference) {
   #opening .sx__c { animation: sx-in .8s cubic-bezier(.2,.7,.1,1) both; animation-play-state: paused; }
   #opening .sx__c + .sx__c { animation-delay: .12s; }
@@ -706,8 +704,8 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         <div class="sx__body">
           <ul class="sx__checks">
             <li><label><input type="checkbox"> Copy details between tools</label></li>
-            <li><label><input type="checkbox"> Log calls and emails by hand</label></li>
-            <li><label><input type="checkbox"> Research every account first</label></li>
+            <li><label><input type="checkbox"> Manually log activities</label></li>
+            <li><label><input type="checkbox"> Build context for every conversation manually</label></li>
             <li><label><input type="checkbox"> Say “I’ll update the CRM later”</label></li>
           </ul>
           <div class="sx__meter" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
