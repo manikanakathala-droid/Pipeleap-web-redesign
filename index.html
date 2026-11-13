@@ -417,6 +417,16 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #faq .fq__q::after { content: "+"; font-family: var(--font-1); font-size: 32px; line-height: 1; transition: transform .35s cubic-bezier(.2, .7, .1, 1); }
 #faq .fq__item[open] .fq__q::after { transform: rotate(45deg); }
 #faq .fq__a { max-width: 40em; padding-bottom: 22px; color: var(--color-4); }
+#faq .fq__more { margin-top: 20px; }
+#faq .fq__morebtn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 1px solid var(--color-6); border-radius: 999px; cursor: pointer; list-style: none; color: var(--color-2); transition: border-color .2s, color .2s; }
+#faq .fq__morebtn::-webkit-details-marker { display: none; }
+#faq .fq__morebtn::after { content: "+"; font-family: var(--font-1); font-size: 20px; line-height: 1; transition: transform .35s cubic-bezier(.2, .7, .1, 1); }
+#faq .fq__more[open] > .fq__morebtn::after { transform: rotate(45deg); }
+#faq .fq__more[open] > .fq__morebtn span:first-child::after { content: ""; }
+#faq .fq__morebtn:hover { border-color: var(--color-7); color: var(--color-7); }
+#faq .fq__count { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; background: var(--color-7); color: #fff; font-size: 11px; }
+#faq .fq__morelist { margin-top: 12px; }
+#faq .fq__morelist .fq__item:last-child { border-bottom: 1px solid var(--color-6); }
 @media (max-width: 760px) { #faq .fq__body { grid-template-columns: 1fr; gap: 0; } #faq .fq__note { padding-top: 0; } }
 }
 </style>
@@ -993,6 +1003,59 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       <details class="fq__item ruled" data-8b-motion="rule" data-8b-enter="95%">
         <summary class="fq__q"><span class="m-text-6">Which tools does it work with?</span></summary>
         <p class="fq__a m-text">Pipeleap works on top of the prospecting and data tools your team already uses. We’ll show you how it fits your stack in the walkthrough.</p>
+      </details>
+      <details class="fq__more">
+        <summary class="fq__morebtn m-text-3"><span>More questions</span><span class="fq__count">12</span></summary>
+        <div class="fq__morelist">
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">How long does it take to get running?</span></summary>
+            <p class="fq__a m-text">You connect the tools you already use, and there is nothing to migrate or rebuild. The walkthrough shows the exact steps on your own stack.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">Will my reps actually use it?</span></summary>
+            <p class="fq__a m-text">They do not have to learn a new routine. Pipeleap puts the next action in front of them, and approving a draft takes less effort than writing one.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">What happens to our data?</span></summary>
+            <p class="fq__a m-text">It stays in your CRM, which remains the source of truth. You set the roles, bring your own AI key if you want, and cap AI spend.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">Can we trust what the AI writes?</span></summary>
+            <p class="fq__a m-text">Nothing reaches a buyer without a rep’s approval. Every draft is a starting point, not a send.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">What does it cost?</span></summary>
+            <p class="fq__a m-text">It depends on your team and stack. In the walkthrough we set the cost next to what your idle licences and lost selling time already cost you.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">Our CRM data is messy. Will that break it?</span></summary>
+            <p class="fq__a m-text">That is usually the reason teams start. Pipeleap flags gaps, retries failed syncs and keeps the CRM current as reps work.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">Is this for a team our size?</span></summary>
+            <p class="fq__a m-text">If your reps use more than one tool to work a deal, the gap Pipeleap closes is already there, whether you have five reps or fifty.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">Will managers use it to watch reps?</span></summary>
+            <p class="fq__a m-text">It shows where the time goes so managers can coach and remove admin, not to count keystrokes. Your team decides which pages count as selling time.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">We’re in a busy quarter. Can this wait?</span></summary>
+            <p class="fq__a m-text">Every week it waits, the same hours go to admin and the same licences sit idle. The walkthrough shows what that adds up to.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">What if it doesn’t work for us?</span></summary>
+            <p class="fq__a m-text">Your tools and CRM stay exactly as they are, so stopping changes nothing you rely on. You keep everything Pipeleap wrote back.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">What happens in the walkthrough?</span></summary>
+            <p class="fq__a m-text">We map your stack, show where the time goes, and run Pipeleap’s work on scenarios from your own tools. You leave with the numbers whether you buy or not.</p>
+          </details>
+          <details class="fq__item ruled">
+            <summary class="fq__q"><span class="m-text-6">Who should join the walkthrough?</span></summary>
+            <p class="fq__a m-text">Whoever owns the number and whoever owns the systems, usually a sales leader and RevOps. Together you see both sides in one session.</p>
+          </details>
+        </div>
       </details>
     </div>
   </div>
