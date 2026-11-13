@@ -164,7 +164,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #site-nav.is-scrolled { background: color-mix(in srgb, var(--color-1) 92%, transparent); }
 #site-nav.is-hidden:not(.is-open):not(:focus-within) { transform: translateY(-105%); }
 #site-nav > nav { flex: 1; }
-#site-nav .nav__logo { font-family: var(--font-1); font-size: 22px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; white-space: nowrap; }
+#site-nav .nav__logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-1); font-size: 22px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; white-space: nowrap; }
+#site-nav .nav__mark { width: 28px; height: 28px; flex: none; }
 #site-nav .nav__list { display: flex; flex: 1; justify-content: center; gap: clamp(18px, 3.4vw, 52px); }
 #site-nav .nav__item a { padding-block: 6px; }
 #site-nav .nav__menu { display: none; }
@@ -647,7 +648,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
 <body>
 <!-- navigation: fixed top bar: wordmark, five section links, Book a walkthrough button; hides on scroll down; full-screen phone menu -->
 <header id="site-nav" class="nav" data-8b-section="navigation">
-  <a class="nav__logo" href="#opening">Pipeleap</a>
+  <a class="nav__logo" href="#opening"><img class="nav__mark" src="favicon.svg" alt="" width="28" height="28">Pipeleap</a>
   <nav aria-label="Main">
     <ul class="nav__list" id="nav-list">
       <li class="nav__item"><a class="m-link m-text-3" href="#selection">The problem</a></li>
