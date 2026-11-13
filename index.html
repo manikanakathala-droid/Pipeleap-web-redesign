@@ -170,12 +170,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #site-nav .nav__item a { padding-block: 6px; }
 #site-nav .nav__menu { display: none; }
 @media (max-width: 900px) {
-  #site-nav .nav__menu { display: inline-flex; margin-left: auto; position: relative; z-index: 2; }
-  #site-nav .nav__cta { display: none; }
+  #site-nav .nav__menu { display: none; }
+  #site-nav .nav__cta { margin-left: auto; padding: 0 16px; }
   #site-nav .nav__logo { position: relative; z-index: 2; }
   #site-nav .nav__list { position: fixed; inset: 0; z-index: 1; display: none; flex-direction: column; justify-content: center; gap: 6px; padding: 88px var(--space-1) 40px; background: var(--color-1); }
   #site-nav.is-open .nav__list { display: flex; }
   #site-nav .nav__item a { font-family: var(--font-1); font-size: clamp(40px, 12vw, 64px); font-weight: 600; letter-spacing: -0.04em; text-transform: none; line-height: 1.05; }
+}
+@media (max-width: 360px) {
+  #site-nav .nav__cta { padding: 0 12px; }
+  #site-nav .nav__cta .m-btn__label { font-size: 11px; letter-spacing: 0.03em; }
+  #site-nav .nav__logo { gap: 6px; font-size: 20px; }
+  #site-nav .nav__mark { width: 24px; height: 24px; }
 }
 }
 </style>
