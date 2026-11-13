@@ -301,7 +301,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #strands .st__item { display: inline-flex; align-items: flex-start; gap: 0.12em; }
 #strands .st__item + .st__item::before { content: "/"; margin-right: 0.22em; color: var(--color-5); }
 #strands .st__cut { position: relative; display: inline-block; white-space: nowrap; }
-#strands .st__days { font-size: 11px; letter-spacing: 0.05em; margin-top: 0.6em; color: var(--color-4); white-space: nowrap; }
+#strands .st__days { font-size: 11px; letter-spacing: 0.05em; line-height: 1.35; margin-top: 0.6em; color: var(--color-4); max-width: 15em; }
 @media (max-width: 760px) {
   #strands .st__head { grid-template-columns: 1fr; gap: 12px; }
   #strands .st__note { justify-self: start; }
@@ -811,14 +811,14 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       <p class="st__note m-text-3">[Reps review and decide. Pipeleap prepares.]</p>
     </div>
     <ul class="st__list" data-8b-items=":scope > .st__item" data-8b-fixed="8">
-      <li class="st__item"><span class="st__cut"><span class="st__name">Account discovery</span></span><span class="st__days m-text-3">[ICP scoring]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Account research</span></span><span class="st__days m-text-3">[Before outreach]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Contact enrichment</span></span><span class="st__days m-text-3">[Your own data]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Campaigns</span></span><span class="st__days m-text-3">[Email and social]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Unified inbox</span></span><span class="st__days m-text-3">[Sorted by intent]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Calls and meetings</span></span><span class="st__days m-text-3">[Scripts, briefs]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Pipeline and forecast</span></span><span class="st__days m-text-3">[Next steps]</span></li>
-      <li class="st__item"><span class="st__cut"><span class="st__name">Daily reporting</span></span><span class="st__days m-text-3">[Rep, team, exec]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Account discovery</span></span><span class="st__days m-text-3">[Rescored every 30 minutes]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Account research</span></span><span class="st__days m-text-3">[Refreshed daily, before you ask]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Contact enrichment</span></span><span class="st__days m-text-3">[Missing details retried nightly]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Campaigns</span></span><span class="st__days m-text-3">[Stalled sequences move to nurture]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Unified inbox</span></span><span class="st__days m-text-3">[Unanswered threads picked back up]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Calls and meetings</span></span><span class="st__days m-text-3">[No-shows caught, recovery drafted]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Pipeline and forecast</span></span><span class="st__days m-text-3">[Flags a drop, not just a low score]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Daily reporting</span></span><span class="st__days m-text-3">[Every figure marked measured or estimated]</span></li>
     </ul>
   </div>
 </section>
