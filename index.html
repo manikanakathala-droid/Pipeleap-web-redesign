@@ -541,7 +541,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 }
 @layer scenes {
-[data-8b-live] #strands { timeline-scope: --strands-t1, --strands-t2, --strands-t3, --strands-t4, --strands-t5, --strands-t6, --strands-t7, --strands-t8, --strands-t9; }
+[data-8b-live] #strands { timeline-scope: --strands-t1, --strands-t2, --strands-t3, --strands-t4, --strands-t5, --strands-t6, --strands-t7, --strands-t8, --strands-t9, --strands-t10; }
 [data-8b-live] #strands .st__list > .st__item { view-timeline-inset: 0; }
 [data-8b-live] #strands .st__list > li:nth-of-type(1) { view-timeline: --strands-item block, --strands-t1 block; }
 [data-8b-live] #strands .st__list > li:nth-of-type(2) { view-timeline: --strands-item block, --strands-t2 block; }
@@ -552,6 +552,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 [data-8b-live] #strands .st__list > li:nth-of-type(7) { view-timeline: --strands-item block, --strands-t7 block; }
 [data-8b-live] #strands .st__list > li:nth-of-type(8) { view-timeline: --strands-item block, --strands-t8 block; }
 [data-8b-live] #strands .st__list > li:nth-of-type(9) { view-timeline: --strands-item block, --strands-t9 block; }
+[data-8b-live] #strands .st__list > li:nth-of-type(10) { view-timeline: --strands-item block, --strands-t10 block; }
 [data-8b-live] #strands .st__list > .st__item > .st__cut > span:nth-of-type(1) { animation-timeline: --strands-item; animation-range: cover 2vh cover calc(47% - 1.76vh), cover calc(47% - 1.76vh) cover calc(50% - 2vh); animation-timing-function: cubic-bezier(0.3333, 0.6667, 0.6667, 1), linear; animation-fill-mode: both; transform: none; }
 [data-8b-live] #strands .st__list > .st__item > .st__cut > span:nth-child(2) { animation-timeline: --strands-item; animation-range: cover 2vh cover calc(47% - 1.76vh), cover calc(47% - 1.76vh) cover calc(50% - 2vh), cover calc(47% - 1.76vh) cover calc(50% - 2vh); animation-timing-function: cubic-bezier(0.3333, 0.6667, 0.6667, 1), linear, linear; animation-fill-mode: both; transform: none; }
 @keyframes strands-span-st-name-translate { 0% { translate: calc(-1 * min(9vw, 120px)) 0px; } 100% { translate: 0px 0px; } }
@@ -819,13 +820,14 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       <p class="st__lead m-text-2">What Pipeleap takes off your team’s plate, every day.</p>
       <p class="st__note m-text-3">[Reps review and decide. Pipeleap prepares.]</p>
     </div>
-    <ul class="st__list" data-8b-items=":scope > .st__item" data-8b-fixed="9">
+    <ul class="st__list" data-8b-items=":scope > .st__item" data-8b-fixed="10">
       <li class="st__item"><span class="st__cut"><span class="st__name">Account discovery</span></span><span class="st__days m-text-3">[ICP fit, scored]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Account research</span></span><span class="st__days m-text-3">[Context for every conversation, automated]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Intel</span></span><span class="st__days m-text-3">[Competitor intel carried into briefs, scripts and drafts]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Contact enrichment</span></span><span class="st__days m-text-3">[Automated, matched to buyer persona]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Campaigns</span></span><span class="st__days m-text-3">[Six campaign types, routed by job title]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Unified inbox</span></span><span class="st__days m-text-3">[All work in one place, with next best action]</span></li>
+      <li class="st__item"><span class="st__cut"><span class="st__name">Reply classification</span></span><span class="st__days m-text-3">[Every reply sorted by intent, next step suggested]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Calls and meetings</span></span><span class="st__days m-text-3">[Scripts and briefs ready]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Pipeline and forecast</span></span><span class="st__days m-text-3">[Drops flagged automatically]</span></li>
       <li class="st__item"><span class="st__cut"><span class="st__name">Daily reporting</span></span><span class="st__days m-text-3">[Real-time analytics dashboards]</span></li>
