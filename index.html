@@ -1113,10 +1113,12 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       sx.classList.add('sx--tri');
       const [qc, bud] = cards, budLeft = s.width - gutter - 420, buyLeft = b.left - s.left;
       bud.style.left = budLeft + 'px'; bud.style.bottom = base + 'px'; bud.style.minHeight = buyer.offsetHeight + 'px';
-      qc.style.left = Math.round((buyLeft + budLeft) / 2) + 'px'; qc.style.bottom = (base + buyer.offsetHeight + gap) + 'px';
-      if (qc.getBoundingClientRect().top - s.top >= top) return;
-      sx.classList.add('sx--tight'); bud.style.minHeight = buyer.offsetHeight + 'px';
-      if (qc.getBoundingClientRect().top - s.top >= top) return;
+      qc.style.left = Math.round((buyLeft + budLeft) / 2) + 'px';
+      for (const [tight, lift] of [[false, 56], [true, 56], [false, 20], [true, 20]]) {
+        sx.classList.toggle('sx--tight', tight); bud.style.minHeight = buyer.offsetHeight + 'px';
+        qc.style.bottom = (base + buyer.offsetHeight + lift) + 'px';
+        if (qc.getBoundingClientRect().top - s.top >= top) return;
+      }
       sx.classList.remove('sx--tight');
       sx.classList.remove('sx--tri'); cards.forEach(c => { c.style.left = c.style.bottom = c.style.minHeight = ''; });
       sx.classList.add('sx--col');
