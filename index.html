@@ -428,7 +428,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #passes .ps__side { display: grid; gap: 18px; justify-items: end; text-align: right; padding-bottom: 0.4em; }
 #passes .ps__lead { max-width: 26em; color: var(--color-4); }
 #passes .ps__switch { display: flex; gap: 8px; }
-#passes .ps__list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+#passes .ps__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 1100px) and (min-width: 901px) { #passes .ps__list { grid-template-columns: 1fr 1fr; } #passes .ps__ticket:last-child { grid-column: 1 / -1; } }
 #passes .ps__ticket { display: grid; grid-template-rows: 1fr auto; }
 #passes .ps__body { display: grid; gap: 12px; align-content: start; padding: 24px 24px 28px; }
 #passes .ps__span { color: var(--color-4); }
@@ -998,20 +999,22 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   <div class="ps__head">
     <h2 class="ps__title m-text-4" style="--len:10" data-8b-motion="cut" data-8b-enter="90%">Your stack</h2>
     <div class="ps__side">
-      <p class="ps__lead m-text">Works with your existing sales stack. No need to replace the tools your team already knows.</p>
+      <p class="ps__lead m-text">Pipeleap works on top of the tools you already pay for. Nothing to replace, nothing new for reps to learn.</p>
     </div>
   </div>
   <ul class="ps__list" data-8b-items=":scope > .ps__ticket">
     <li class="ps__ticket">
       <div class="ps__body m-surface">
         <p class="ps__span m-text-3">[Connects to]</p>
-        <h3 class="m-text-6">The tools your reps open every day</h3>
+        <h3 class="m-text-6">The tools your team already runs</h3>
         <ul class="ps__incl m-text">
-          <li>Your CRM</li>
-          <li>Prospecting and data tools</li>
-          <li>Email</li>
-          <li>Calendar</li>
-          <li>Social selling</li>
+          <li>Your CRM, the source of truth</li>
+          <li>Contact &amp; Company Databases</li>
+          <li>Data Enrichment &amp; Waterfall</li>
+          <li>Email Finders &amp; Verifiers</li>
+          <li>Signal &amp; Intent Tools</li>
+          <li>Sales Engagement</li>
+          <li>Inbox and calendar</li>
         </ul>
       </div>
       <div class="ps__stub m-surface">
@@ -1021,13 +1024,28 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     </li>
     <li class="ps__ticket">
       <div class="ps__body m-surface">
+        <p class="ps__span m-text-3">[What changes]</p>
+        <h3 class="m-text-6">One layer over all of it</h3>
+        <ul class="ps__incl m-text">
+          <li>One place to work, not six tabs per contact</li>
+          <li>One view of every account, from every source</li>
+          <li>Licensed seats and capabilities used every day</li>
+        </ul>
+      </div>
+      <div class="ps__stub m-surface">
+        <p class="m-text-3">[Same tools, same spend]</p>
+        <a class="m-btn" href="#venues"><span class="m-btn__label">See the outcomes</span></a>
+      </div>
+    </li>
+    <li class="ps__ticket">
+      <div class="ps__body m-surface">
         <p class="ps__span m-text-3">[Stays yours]</p>
-        <h3 class="m-text-6">Your CRM, your keys, your limits</h3>
+        <h3 class="m-text-6">Your tools, your keys, your limits</h3>
         <ul class="ps__incl m-text">
           <li>Your CRM stays the source of truth</li>
-          <li>Uses the data subscriptions you already pay for</li>
+          <li>Your subscriptions and credits, under your own caps</li>
           <li>Bring your own AI key, if you want</li>
-          <li>Clear roles and a cap on AI spend</li>
+          <li>You set the roles, the AI spend cap and what counts as selling time</li>
         </ul>
       </div>
       <div class="ps__stub m-surface">
