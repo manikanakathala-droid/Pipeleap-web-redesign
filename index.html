@@ -380,6 +380,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #venues .vn__text { display: grid; gap: 8px; }
 #venues .vn__text .m-text-3, #venues .vn__text .m-text { color: var(--color-4); }
 #venues .vn__text .m-text { max-width: 30em; }
+#venues .vn__points { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 15px; line-height: 1.4; }
+#venues .vn__points li { position: relative; padding-left: 16px; }
+#venues .vn__points li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--color-7); }
 @media (max-width: 760px) {
   #venues .vn__head { grid-template-columns: 1fr; }
   #venues .vn__lead { justify-self: start; }
@@ -929,7 +932,13 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         <div class="vn__text">
           <h3 class="m-text-6">Reclaim selling time</h3>
           <p class="m-text-3">Give reps their day back</p>
-          <p class="m-text">Account research, contact enrichment, CRM updates, activity logging and follow-ups are done for the rep. Their time goes to conversations.</p>
+          <ul class="vn__points m-text">
+            <li>Research, prep and drafts ready in advance</li>
+            <li>Missed replies and no-shows become next steps</li>
+            <li>CRM updated without anyone typing</li>
+            <li>Every conversation starts with context</li>
+            <li>Nothing reaches a buyer without approval</li>
+          </ul>
         </div>
       </li>
       <li class="vn__panel">
