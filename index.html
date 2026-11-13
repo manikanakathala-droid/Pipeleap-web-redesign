@@ -600,67 +600,40 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @keyframes passes-div-ps-stub-rotate { 0% { rotate: 7deg; } 100% { rotate: 0deg; } }
 @keyframes passes-div-ps-stub-rotate-2 { 0% { rotate: -7deg; } 100% { rotate: 0deg; } }
 }
-/* ---- scattered question cards (second hero screen) ---- */
-#opening .sx { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
-#opening .sx__c { position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); width: calc(var(--w) * 1px); transform-origin: 0 0; transform: scale(var(--sx-s, 1)) rotate(calc(var(--r) * 1deg)); pointer-events: auto; z-index: 1; }
-#opening .sx__c:hover, #opening .sx__c:focus-within { z-index: 5; }
-#opening .sx__in { display: grid; gap: 10px; padding: 16px 16px 18px; border-radius: 14px; background: color-mix(in srgb, #FFFFFF 92%, transparent); border: 1px solid rgba(255,255,255,.75); box-shadow: 0 8px 18px -12px rgba(55, 45, 170, .55); color: var(--color-2); transition: transform .4s cubic-bezier(.2,.7,.1,1), box-shadow .4s; }
-#opening .sx__c:hover .sx__in, #opening .sx__c:focus-within .sx__in { transform: translateY(-4px) rotate(calc(var(--r) * -1deg)); box-shadow: 0 14px 24px -14px rgba(55, 45, 170, .6); }
-#opening .sx .m-text-3 { color: var(--color-4); font-size: 11px; }
-#opening .sx__top { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
-#opening .sx__top > div { display: grid; gap: 8px; }
-#opening .sx__go { width: 40px; height: 40px; }
-#opening .sx__go svg { width: 18px; height: 18px; }
-#opening .sx__t { margin: 0; font-family: var(--font-1); font-weight: 500; font-size: 24px; line-height: 1.06; letter-spacing: -0.02em; }
-#opening .sx__t--s { font-size: 20px; }
-#opening .sx__p { margin: 0; font-size: 14px; line-height: 1.42; color: var(--color-4); }
-#opening .sx__lnk { justify-self: start; color: var(--color-2); }
-/* dark: the main objection */
-#opening .sx--dark .sx__in { background: var(--color-2); border-color: var(--color-2); color: #fff; box-shadow: 0 24px 44px -20px rgba(20, 21, 28, .7); }
-#opening .sx--dark .m-text-3 { color: #B9B3FF; }
-#opening .sx--dark .sx__p { color: #C9CBD6; }
-#opening .sx--dark .sx__go { background: var(--color-7); color: #fff; }
-/* the number */
-#opening .sx--num .sx__in { background: linear-gradient(135deg, #8B7CF6, #6558F5 55%, #3B82F6); border-color: transparent; color: #fff; }
-#opening .sx--num .m-text-3, #opening .sx--num .sx__p { color: #ECEAFF; }
-#opening .sx__num { margin: 0; font-family: var(--font-1); font-weight: 600; font-size: 72px; line-height: .9; letter-spacing: -0.05em; }
-#opening .sx__num small { font-size: 26px; letter-spacing: -0.02em; margin-left: 4px; }
-/* quote */
-#opening .sx__q { margin: 0; font-family: var(--font-1); font-weight: 500; font-size: 30px; line-height: 1; letter-spacing: -0.035em; }
-/* self-check */
-#opening .sx__checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-#opening .sx__checks label { display: flex; gap: 10px; align-items: center; min-height: 40px; padding: 6px 10px; border: 1px solid var(--color-6); border-radius: 9px; background: #fff; cursor: pointer; font-size: 14px; line-height: 1.25; transition: border-color .2s, background-color .2s; }
+/* ---- question cards beside the buyer card (second hero screen) ---- */
+#opening .sx { position: absolute; z-index: 3; display: none; gap: 20px; }
+#opening .sx__c { border-radius: var(--radius-1); color: var(--color-2); display: grid; grid-template-columns: 1fr auto; gap: 18px 20px; width: 420px; padding: 18px; background: color-mix(in srgb, var(--color-3) 88%, transparent); align-content: start; }
+#opening .sx__c > .m-text, #opening .sx__body { grid-column: 1 / -1; }
+#opening .sx__c .m-text { color: var(--color-4); }
+#opening .sx__title { display: grid; gap: 8px; }
+#opening .sx__title .m-text-3 { color: var(--color-4); }
+#opening .sx__body { display: grid; gap: 12px; }
+#opening .sx__checks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+#opening .sx__checks label { display: flex; gap: 10px; align-items: center; height: 100%; min-height: 48px; padding: 8px 12px; border: 1px solid var(--color-6); border-radius: var(--radius-1); background: #fff; cursor: pointer; font-size: 14px; line-height: 1.25; transition: border-color .2s, background-color .2s; }
 #opening .sx__checks input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--color-7); }
 #opening .sx__checks label:has(input:checked) { border-color: var(--color-7); background: #F3F1FE; }
 #opening .sx__meter { display: flex; gap: 5px; }
-#opening .sx__meter span { flex: 1; height: 5px; border-radius: 3px; background: #E8E6F5; transition: background-color .3s; }
+#opening .sx__meter span { flex: 1; height: 5px; border-radius: 3px; background: #E4E2F0; transition: background-color .3s; }
 #opening .sx__meter span.on { background: var(--color-7); }
-#opening .sx__result { margin: 0; font-family: var(--font-1); font-weight: 500; font-size: 16px; line-height: 1.2; color: var(--color-4); }
+#opening .sx__result { margin: 0; font-size: 15px; line-height: 1.3; font-weight: 500; color: var(--color-4); }
 #opening .sx__result.is-hit { color: var(--color-7); }
-/* monday */
-#opening .sx__without { margin: 0; font-size: 13px; line-height: 1.35; color: var(--color-4); text-decoration: line-through; text-decoration-color: rgba(92,95,107,.5); }
-#opening .sx__rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-#opening .sx__rows li { display: grid; gap: 4px; padding: 7px 10px; border-radius: 9px; background: #FBFAFF; border: 1px solid #E9E7F5; font-size: 13.5px; line-height: 1.25; }
-#opening .tag { justify-self: start; padding: 3px 8px; border-radius: 999px; font: 600 10px/1.2 var(--font-3); letter-spacing: .06em; text-transform: uppercase; }
-#opening .tag--nba { background: #ECE9FE; color: #4A3AA7; }
-#opening .tag--due { background: #FDEBE2; color: #A8380B; }
-#opening .tag--fu { background: #E3EEFC; color: #1D5BAA; }
-/* roles */
-#opening .sx__roles { display: flex; flex-wrap: wrap; gap: 6px; }
-#opening .sx__roles a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--color-6); background: #fff; font-size: 13.5px; font-weight: 500; transition: background-color .2s, color .2s, border-color .2s; }
-#opening .sx__roles a:hover { background: var(--color-2); color: #fff; border-color: var(--color-2); }
-/* motion: drift in, then float */
+/* stacked column beside the buyer card, bottoms aligned */
+#opening .sx.sx--col { display: flex; flex-direction: column; justify-content: flex-end; right: var(--space-1); bottom: 44px; }
+/* swipe row along the top of the image */
+#opening .sx.sx--row { display: flex; top: 84px; left: 0; right: 0; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 var(--space-1) 12px; scrollbar-width: none; }
+#opening .sx.sx--row::-webkit-scrollbar { display: none; }
+#opening .sx--row .sx__c { flex: none; width: min(86vw, 420px); scroll-snap-align: start; }
+@media (max-width: 760px) {
+  #opening .op__second:has(.sx--row) { height: auto; min-height: 100svh; flex-direction: column; justify-content: flex-end; align-items: stretch; padding-top: 84px; }
+  #opening .sx.sx--row { position: relative; top: auto; order: -1; margin-bottom: 24px; }
+  #opening .sx__checks { grid-template-columns: 1fr; }
+}
 @media (prefers-reduced-motion: no-preference) {
-  #opening .sx__c { animation: sx-in .9s cubic-bezier(.2,.7,.1,1) both; animation-delay: calc(var(--d) * 90ms + 200ms); animation-play-state: paused; }
+  #opening .sx__c { animation: sx-in .8s cubic-bezier(.2,.7,.1,1) both; animation-play-state: paused; }
+  #opening .sx__c + .sx__c { animation-delay: .12s; }
   #opening .sx.is-on .sx__c { animation-play-state: running; }
 }
-@keyframes sx-in { from { opacity: 0; translate: 0 26px; } }
-/* small screens: one swipeable row along the top of the image */
-@media (max-width: 1099px) {
-  #opening .sx { inset: 84px 0 auto 0; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px var(--space-1) 18px; scrollbar-width: none; }
-  #opening .sx::-webkit-scrollbar { display: none; }
-  #opening .sx__c { position: relative; left: auto; top: auto; flex: none; width: min(78vw, calc(var(--w) * 1px + 20px)); transform: rotate(calc(var(--r) * .4deg)); scroll-snap-align: start; }
-}
+@keyframes sx-in { from { opacity: 0; transform: translateY(18px); } }
 </style>
 <script data-8b-part="motion-gate">
 if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.supports('animation-timeline: view()')) document.documentElement.setAttribute('data-8b-live', '');
@@ -717,10 +690,13 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       </aside>
     </div>
     <div class="sx" role="region" aria-label="Questions buyers ask">
-      <article class="sx__c" style="--x:60;--y:10;--r:-2;--w:300;--d:0">
-        <div class="sx__in">
+      <aside class="sx__c" aria-label="Quick check">
+        <div class="sx__title">
           <p class="m-text-3">[Quick check]</p>
-          <h3 class="sx__t sx__t--s">Do your reps…</h3>
+          <p class="m-text-6">Do your reps…</p>
+        </div>
+        <a class="m-icon" href="#selection" aria-label="See the four problems"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        <div class="sx__body">
           <ul class="sx__checks">
             <li><label><input type="checkbox"> Copy details between tools</label></li>
             <li><label><input type="checkbox"> Log calls and emails by hand</label></li>
@@ -730,15 +706,15 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
           <div class="sx__meter" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
           <p class="sx__result" aria-live="polite">Tick what applies to your team.</p>
         </div>
-      </article>
-      <article class="sx__c" style="--x:78;--y:47;--r:2;--w:236;--d:1">
-        <div class="sx__in">
+      </aside>
+      <aside class="sx__c" aria-label="Your budget">
+        <div class="sx__title">
           <p class="m-text-3">[Your budget]</p>
-          <h3 class="sx__t sx__t--s">You’re already paying for this.</h3>
-          <p class="sx__p">Every licence your reps don’t open is budget spent on nothing.</p>
-          <a class="m-link m-text-3 sx__lnk" href="#contact">Find what sits idle</a>
+          <p class="m-text-6">You’re already paying for this.</p>
         </div>
-      </article>
+        <a class="m-icon" href="#contact" aria-label="Book a walkthrough"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        <p class="m-text">Every licence your reps don’t open is budget spent on nothing.</p>
+      </aside>
     </div>
   </div>
 </section>
@@ -1119,13 +1095,22 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
 </script>
 <script data-8b-part="section-script:scatter">
 (() => {
-  const sx = document.querySelector('#opening .sx'); if (!sx) return;
-  const fit = () => { const w = innerWidth / 1440, s = Math.max(Math.min(w, innerHeight / 900), Math.min(w, 0.85)); sx.style.setProperty('--sx-s', Math.min(s, 1.25).toFixed(3)); };
-  fit(); addEventListener('resize', fit);
-  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { if (e.isIntersecting) sx.classList.add('is-on'); }, { threshold: 0.2 }).observe(sx); else sx.classList.add('is-on');
+  const sec = document.querySelector('#opening .op__second'), sx = sec && sec.querySelector('.sx'); if (!sx) return;
+  const buyer = sec.querySelector('.op__card'), cards = [...sx.children];
+  const layout = () => {
+    sx.classList.remove('sx--col', 'sx--row'); cards[1].style.minHeight = '';
+    const s = sec.getBoundingClientRect(), b = buyer.getBoundingClientRect(), gutter = parseFloat(getComputedStyle(sec.querySelector('.op__second-inner')).paddingLeft) || 28;
+    const room = s.right - gutter - (b.right + 24);
+    sx.classList.add('sx--col');
+    const tall = sx.offsetHeight <= s.height - 44 - 84;
+    if (!(innerWidth >= 1100 && room >= 420 && tall)) { sx.classList.remove('sx--col'); sx.classList.add('sx--row'); }
+    else { cards[1].style.minHeight = buyer.offsetHeight + 'px'; if (sx.offsetHeight > s.height - 44 - 84) cards[1].style.minHeight = ''; }
+  };
+  layout(); addEventListener('resize', layout); if (document.fonts) document.fonts.ready.then(layout);
+  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { if (e.isIntersecting) sx.classList.add('is-on'); }, { threshold: 0.2 }).observe(sec); else sx.classList.add('is-on');
   const boxes = [...sx.querySelectorAll('.sx__checks input')], bars = [...sx.querySelectorAll('.sx__meter span')], out = sx.querySelector('.sx__result');
-  boxes.forEach(b => b.addEventListener('change', () => {
-    const n = boxes.filter(x => x.checked).length;
+  boxes.forEach(x => x.addEventListener('change', () => {
+    const n = boxes.filter(c => c.checked).length;
     bars.forEach((s, i) => s.classList.toggle('on', i < n));
     out.classList.toggle('is-hit', n >= 2);
     out.textContent = n >= 2 ? 'That’s the gap Pipeleap closes.' : n === 1 ? 'One so far. Keep going.' : 'Tick what applies to your team.';
