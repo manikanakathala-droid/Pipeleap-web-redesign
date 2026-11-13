@@ -376,10 +376,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #venues .vn__head { display: grid; grid-template-columns: auto 1fr; gap: 24px 40px; align-items: end; }
 #venues .vn__title { font-size: min(13vw, 22svh, calc((100vw - 2 * var(--space-1)) / (var(--len) * 1.2))); }
 #venues .vn__lead { max-width: 22em; justify-self: end; padding-bottom: 0.4em; }
-#venues .vn__track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-inline: var(--space-1); }
+#venues .vn__track { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 24px 20px; padding-inline: var(--space-1); }
 #venues .vn__panel { display: grid; gap: 16px; align-content: start; }
 #venues .vn__photo { aspect-ratio: 16 / 10; border-radius: var(--radius-1); overflow: hidden; }
-#venues .vn__photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.14); }
+#venues .vn__photo img { width: 100%; height: 100%; object-fit: cover; }
 #venues .vn__text { display: grid; gap: 8px; }
 #venues .vn__text .m-text-3, #venues .vn__text .m-text { color: var(--color-4); }
 #venues .vn__text .m-text { max-width: 30em; }
@@ -593,33 +593,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 [data-8b-live] #jury .jr__grid { view-timeline: --jury-t1 block; view-timeline-inset: 0; }
 [data-8b-live] #jury .jr__grid > .jr__card > .jr__photo > img { animation-name: jury-figure-jr-photo-img-filter; animation-timeline: --jury-t1; animation-range: cover calc(12vh - 14.9159vh * var(--i) + 17.757% * var(--i)) cover calc(46.729% + 17.757% * var(--i) - 27.2523vh - 14.9159vh * var(--i)); animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); animation-fill-mode: both; }
 @keyframes jury-figure-jr-photo-img-filter { 0% { filter: invert(1) grayscale(1) contrast(1.15); } 100% { filter: invert(0) grayscale(0) contrast(1); } }
-}
-</style>
-<style data-8b-part="scene:venues">
-@layer scenes {
-@media (prefers-reduced-motion: no-preference) {
-  [data-8b-live] #venues .vn__stage { min-height: 100svh; align-content: center; padding-block: 72px 24px; }
-  [data-8b-live] #venues .vn__track { display: flex; width: max-content; gap: 20px; }
-  [data-8b-live] #venues .vn__panel { width: var(--vn-panel-w, min(50vw, 720px)); }
-}
-@media (prefers-reduced-motion: no-preference) and (max-width: 760px) {
-  [data-8b-live] #venues .vn__panel { width: var(--vn-panel-w, 80vw); }
-}
-@media (prefers-reduced-motion: no-preference) and (max-height: 760px) {
-  [data-8b-live] #venues .vn__stage { padding-block: 24px 12px; gap: 20px; }
-  [data-8b-live] #venues .vn__panel { gap: 10px; }
-  [data-8b-live] #venues .vn__text { gap: 4px; }
-}
-}
-@layer scenes {
-[data-8b-live] #venues .vn-stage-room { view-timeline: --venues-t1 block; view-timeline-inset: 0; }
-[data-8b-live] #venues .vn-stage-room > .vn-stage-room-space { height: var(--venues-travel); }
-[data-8b-live] #venues .vn__stage { position: sticky; top: 0%; }
-[data-8b-live] #venues .vn__track, [data-8b-live] #venues .vn__track > .vn__panel > .vn__photo > img { animation-timeline: --venues-t1; animation-range: cover 100vh cover calc(100vh + var(--venues-travel)); animation-timing-function: linear; animation-fill-mode: both; transform: none; }
-[data-8b-live] #venues .vn__track { animation-name: venues-ul-vn-track-translate; }
-[data-8b-live] #venues .vn__track > .vn__panel > .vn__photo > img { animation-name: venues-figure-vn-photo-img-translate; scale: 1.14; }
-@keyframes venues-ul-vn-track-translate { 0% { translate: 0px 0px; } 100% { translate: calc(-1 * var(--venues-travel)) 0px; } }
-@keyframes venues-figure-vn-photo-img-translate { 0% { translate: -6% 0px; } 100% { translate: 6% 0px; } }
 }
 </style>
 <style data-8b-part="scene:passes">
@@ -934,7 +907,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
   </ol>
 </section>
 
-<!-- venues: the three value pillars as panels with an illustration, a name, a label and a description; a pinned row that slides sideways (animation: scene:venues) -->
+<!-- venues: the three value pillars as panels with an illustration, a name, a label and a description; a static grid, all three always in view -->
 <section id="venues" class="vn" data-8b-section="venues">
   <div class="vn__stage">
     <div class="vn__head wrap">
@@ -1393,26 +1366,6 @@ motionKit.scene("premiere", () => {
     motionKit.set(first, { "--premiere-travel": `${Math.max(0, centre - pillWidth / 2 - 18 - (word.x + word.w))}px` });
     motionKit.set(second, { "--premiere-travel": `${Math.min(0, centre + pillWidth / 2 + 18 - other.x)}px` });
   });
-});
-</script>
-<script data-8b-part="scene-script:venues">
-motionKit.scene("venues", () => {
-  { const stage = document.querySelector("#venues .vn__stage"), room = document.createElement('div'), space = document.createElement('div'); room.className = "vn-stage-room"; space.className = "vn-stage-room-space"; space.setAttribute('aria-hidden', 'true'); stage.before(room); room.append(stage, space);
-    const track = stage.querySelector(".vn__track");
-    motionKit.measure(() => {
-      // Keep the whole pinned stage inside the window: on short screens shrink the panels so the
-      // images and their text stay visible while the row slides, instead of running off the bottom.
-      stage.style.removeProperty('--vn-panel-w');
-      const panel = track.querySelector('.vn__panel');
-      for (let i = 0; i < 6 && panel; i++) {
-        const over = stage.offsetHeight - window.innerHeight; if (over <= 0) break;
-        const photo = panel.querySelector('.vn__photo'), ratio = photo.offsetWidth / photo.offsetHeight;
-        const w = Math.max(240, Math.floor((photo.offsetHeight - over - 4) * ratio));
-        if (w >= panel.offsetWidth) break;
-        stage.style.setProperty('--vn-panel-w', w + 'px');
-      }
-      motionKit.set(room, { "--venues-travel": `${Math.max(0, track.scrollWidth - document.documentElement.clientWidth)}px` });
-    }); }
 });
 </script>
 </body>
