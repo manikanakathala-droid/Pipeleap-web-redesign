@@ -163,8 +163,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .pn { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; background: color-mix(in srgb, var(--color-1) 88%, transparent); backdrop-filter: blur(10px); }
 .pn__logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-1); font-size: 22px; font-weight: 600; letter-spacing: -0.04em; }
 .pn__logo img { width: 28px; height: 28px; }
-.pn__back { color: var(--color-4); margin-right: auto; margin-left: 24px; }
-@media (max-width: 600px) { .pn__back { display: none; } .pn .m-btn { padding: 0 14px; } .pn .m-btn__label { font-size: 11px; } }
+@media (max-width: 600px) { .pn .m-btn { padding: 0 14px; } .pn .m-btn__label { font-size: 11px; } }
 
 section { padding-block: clamp(56px, 8vw, 112px); }
 .kick { color: var(--color-7); }
@@ -269,7 +268,6 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
 <body>
 <header class="pn wrap">
   <a class="pn__logo" href="/"><img src="favicon.svg" alt="" width="28" height="28">Pipeleap</a>
-  <a class="pn__back m-text-3 m-link" href="/">Back to the site</a>
   <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Apply for a founding pilot</span></a>
 </header>
 <main>
