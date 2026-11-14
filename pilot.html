@@ -245,8 +245,26 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
 .cta h2 { max-width: 18ch; }
 .cta__acts { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .ft { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px 40px; border-top: 1px solid var(--color-6); color: var(--color-4); }
+/* motion */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rise { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.7,.1,1), transform .8s cubic-bezier(.2,.7,.1,1); transition-delay: calc(var(--d, 0) * 90ms); }
+  .js .rise.in { opacity: 1; transform: none; }
+  .js .bar i::after { animation: none; width: 0; transition: width 1.4s cubic-bezier(.2,.7,.1,1); }
+  .js .rv.in .bar i::after { width: var(--w); }
+  .js .rv.in .bar.after i::after { transition-delay: .5s; }
+  .rv__row .tag { animation: tagpulse 3.2s ease-in-out infinite; }
+  .rv__row:nth-of-type(3) .tag { animation-delay: .5s; } .rv__row:nth-of-type(4) .tag { animation-delay: 1s; } .rv__row:nth-of-type(5) .tag { animation-delay: 1.5s; }
+  .hero .m-btn { animation: ctaglow 3.6s ease-in-out infinite; }
+  .step:last-child { background-size: 200% 200%; background-image: linear-gradient(120deg, #6558F5, #8B7CF6, #6558F5); animation: shift 6s ease-in-out infinite; }
+  .fd { background-image: radial-gradient(40% 60% at 85% 10%, rgba(101,88,245,.35), transparent 70%); background-repeat: no-repeat; animation: drift 9s ease-in-out infinite alternate; }
+}
+@keyframes tagpulse { 0%, 70%, 100% { background: #F3F1FE; } 80% { background: #E2DEFC; } }
+@keyframes ctaglow { 0%, 100% { box-shadow: 0 0 0 0 rgba(101,88,245,0); } 50% { box-shadow: 0 0 0 8px rgba(101,88,245,.14); } }
+@keyframes shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+@keyframes drift { from { background-position: 85% 10%; } to { background-position: 60% 30%; } }
 }
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="pn wrap">
@@ -256,7 +274,7 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
 </header>
 <main>
   <section class="hero wrap">
-    <div class="hero__copy">
+    <div class="hero__copy rise">
       <p class="kick m-text-3">[Founding pilot · free for 30 days]</p>
       <h1 class="m-text-5">Your CRM knows what your reps sold. Not what they spent the day doing.</h1>
       <p class="lead m-text-2">Pipeleap logs your reps' activity, writes their follow-ups and shows the hours they get back. Try it free for 30 days.</p>
@@ -266,7 +284,7 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
       </div>
       <div class="chips m-text-3"><span class="chip">3 to 10 reps</span><span class="chip">No charge</span><span class="chip">You help set the price</span></div>
     </div>
-    <div class="rv m-surface" aria-label="What the day-30 review shows">
+    <div class="rv m-surface rise" style="--d:2" aria-label="What the day-30 review shows">
       <div class="rv__top"><p class="m-text-6">Your day-30 review</p><p class="m-text-3 muted">Measured, not surveyed</p></div>
       <div class="rv__row">
         <p class="m-text"><b>Selling time</b></p><span class="tag m-text-3">Before → after</span>
@@ -284,13 +302,13 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
   </section>
 
   <section class="calc wrap" id="count">
-    <div class="calc__copy">
+    <div class="calc__copy rise">
       <p class="kick m-text-3">[The problem, in your numbers]</p>
       <h2 class="m-text-5">Count last week's admin</h2>
       <p class="lead m-text-2">How many hours did one rep spend last week logging calls, updating deals and rewriting follow-ups?</p>
       <p class="muted m-text">Multiply by your team, then by 52. That's selling time you lose every year.</p>
     </div>
-    <div class="calc__box m-surface">
+    <div class="calc__box m-surface rise" style="--d:2">
       <label class="field"><span class="field__top"><span class="m-text-3 muted">Admin hours per rep, last week</span><output id="hOut">6</output></span><input id="h" type="range" min="1" max="20" value="6"></label>
       <label class="field"><span class="field__top"><span class="m-text-3 muted">Reps on your team</span><output id="rOut">6</output></span><input id="r" type="range" min="1" max="10" value="6"></label>
       <div class="calc__out">
@@ -300,41 +318,41 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
     </div>
   </section>
 
-  <section class="doubt wrap">
+  <section class="doubt wrap rise">
     <p class="kick m-text-3">[Fair question]</p>
     <blockquote>This probably sounds like every other tool that promises to save your reps time.</blockquote>
     <p class="lead m-text-2">We measure it. Pipeleap records selling versus admin time from what reps actually do. You see both numbers, before and after.</p>
   </section>
 
   <section class="wrap" id="how">
-    <div class="steps__head">
+    <div class="steps__head rise">
       <p class="kick m-text-3">[How the pilot works]</p>
       <h2 class="m-text-5">30 days, three steps</h2>
     </div>
     <ol class="steps">
-      <li class="step m-surface"><span class="step__n">01</span><p class="m-text-3">Week 1</p><p class="m-text-6">Baseline</p><p class="muted m-text">We connect your tools and record where time goes today.</p></li>
-      <li class="step m-surface"><span class="step__n">02</span><p class="m-text-3">Weeks 2 to 4</p><p class="m-text-6">Reps work in Pipeleap</p><p class="muted m-text">Admin logged, follow-ups drafted, stalled deals flagged.</p></li>
-      <li class="step m-surface"><span class="step__n">03</span><p class="m-text-3">Day 30</p><p class="m-text-6">Before and after</p><p class="muted m-text">Hours back, conversations, new pipeline, and what it cost to run.</p></li>
+      <li class="step m-surface rise" style="--d:1"><span class="step__n">01</span><p class="m-text-3">Week 1</p><p class="m-text-6">Baseline</p><p class="muted m-text">We connect your tools and record where time goes today.</p></li>
+      <li class="step m-surface rise" style="--d:2"><span class="step__n">02</span><p class="m-text-3">Weeks 2 to 4</p><p class="m-text-6">Reps work in Pipeleap</p><p class="muted m-text">Admin logged, follow-ups drafted, stalled deals flagged.</p></li>
+      <li class="step m-surface rise" style="--d:3"><span class="step__n">03</span><p class="m-text-3">Day 30</p><p class="m-text-6">Before and after</p><p class="muted m-text">Hours back, conversations, new pipeline, and what it cost to run.</p></li>
     </ol>
     <p class="steps__note muted m-text">Tell us the one number you want to move. We'll build the review around it.</p>
   </section>
 
   <section class="who wrap">
-    <div class="who__copy">
+    <div class="who__copy rise">
       <p class="kick m-text-3">[Who it's for]</p>
       <h2 class="m-text-5">Sales managers running 3 to 10 reps</h2>
       <p class="lead m-text-2">If your reps spend Fridays cleaning up the CRM, this is for you.</p>
       <p class="muted m-text">Tried reminders and stricter process already? The pilot shows how to stop needing them.</p>
     </div>
     <div class="isnt">
-      <div class="m-surface"><b>Not a new CRM</b><span class="muted m-text">Your CRM stays your record. Pipeleap fills it in.</span></div>
-      <div class="m-surface"><b>Not a replacement for your tools</b><span class="muted m-text">You keep the tools and plans you have. Pipeleap works on top.</span></div>
-      <div class="m-surface"><b>Not an automation bot</b><span class="muted m-text">It never sends, clicks or posts on social networks for your reps.</span></div>
+      <div class="m-surface rise" style="--d:1"><b>Not a new CRM</b><span class="muted m-text">Your CRM stays your record. Pipeleap fills it in.</span></div>
+      <div class="m-surface rise" style="--d:2"><b>Not a replacement for your tools</b><span class="muted m-text">You keep the tools and plans you have. Pipeleap works on top.</span></div>
+      <div class="m-surface rise" style="--d:3"><b>Not an automation bot</b><span class="muted m-text">It never sends, clicks or posts on social networks for your reps.</span></div>
     </div>
   </section>
 
   <section class="wrap">
-    <div class="fd">
+    <div class="fd rise">
       <div class="fd__copy">
         <p class="kick m-text-3">[Founding teams]</p>
         <h2 class="m-text-5">Be one of the teams that sets the price</h2>
@@ -353,7 +371,7 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
     </div>
   </section>
 
-  <section class="cta wrap">
+  <section class="cta wrap rise">
     <h2 class="m-text-5">Would it be a bad idea to see your reps' real selling time for 30 days?</h2>
     <div class="cta__acts">
       <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Apply for a founding pilot</span></a>
@@ -368,10 +386,34 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
 </footer>
 <script>
 (() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const els = [...document.querySelectorAll('.rise')];
+  if (reduce || !('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); }
+  else {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(e => io.observe(e));
+  }
   const h = document.getElementById('h'), r = document.getElementById('r');
   const ho = document.getElementById('hOut'), ro = document.getElementById('rOut'), yr = document.getElementById('yr');
-  const up = () => { ho.textContent = h.value; ro.textContent = r.value; yr.textContent = (h.value * r.value * 52).toLocaleString('en-US'); };
-  h.addEventListener('input', up); r.addEventListener('input', up); up();
+  let shown = 0, raf = 0;
+  const fmt = n => Math.round(n).toLocaleString('en-US');
+  const tween = to => {
+    cancelAnimationFrame(raf);
+    if (reduce) { shown = to; yr.textContent = fmt(to); return; }
+    const from = shown, t0 = performance.now(), dur = 700;
+    const step = t => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); shown = from + (to - from) * e; yr.textContent = fmt(shown); if (k < 1) raf = requestAnimationFrame(step); };
+    raf = requestAnimationFrame(step);
+  };
+  const total = () => h.value * r.value * 52;
+  const up = () => { ho.textContent = h.value; ro.textContent = r.value; tween(total()); };
+  h.addEventListener('input', up); r.addEventListener('input', up);
+  ho.textContent = h.value; ro.textContent = r.value; yr.textContent = fmt(total());
+  const box = document.querySelector('.calc__box');
+  if (!reduce && 'IntersectionObserver' in window) {
+    shown = 0; yr.textContent = '0';
+    const io2 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { tween(total()); io2.disconnect(); } }, { threshold: 0.4 });
+    io2.observe(box);
+  }
 })();
 </script>
 </body>
