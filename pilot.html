@@ -158,13 +158,55 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .ruled::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--color-6); transform-origin: left; transform: scaleX(var(--rule, 1)); }
 }
 </style>
+<style data-8b-part="section:site-nav">
+@layer sections {
+#site-nav { position: fixed; z-index: 50; inset: 0 0 auto 0; display: flex; align-items: center; gap: 24px; height: 68px; padding-inline: var(--space-1); transition: transform .5s cubic-bezier(.2, .7, .1, 1), background-color .4s; }
+#site-nav.is-scrolled { background: color-mix(in srgb, var(--color-1) 92%, transparent); }
+#site-nav.is-hidden:not(.is-open):not(:focus-within) { transform: translateY(-105%); }
+#site-nav > nav { flex: 1; }
+#site-nav .nav__logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-1); font-size: 22px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; white-space: nowrap; }
+#site-nav .nav__mark { width: 28px; height: 28px; flex: none; }
+#site-nav .nav__list { display: flex; flex: 1; justify-content: center; gap: clamp(18px, 3.4vw, 52px); }
+#site-nav .nav__item a { padding-block: 6px; }
+#site-nav .nav__pilot { color: var(--color-7); }
+.ct__pilot { display: table; margin-top: 16px; color: var(--color-7); }
+#site-nav .nav__item a { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 761px) { #site-nav .nav__list { gap: clamp(12px, 1.8vw, 24px); } #site-nav .nav__item a { font-size: 11.5px; letter-spacing: 0.04em; } }
+#site-nav .nav__menu { display: none; }
+@media (max-width: 900px) {
+  #site-nav .nav__menu { display: none; }
+  #site-nav .nav__cta { margin-left: auto; padding: 0 16px; }
+  #site-nav .nav__logo { position: relative; z-index: 2; }
+  #site-nav .nav__list { position: fixed; inset: 0; z-index: 1; display: none; flex-direction: column; justify-content: center; gap: 6px; padding: 88px var(--space-1) 40px; background: var(--color-1); }
+  #site-nav.is-open .nav__list { display: flex; }
+  #site-nav .nav__item a { font-family: var(--font-1); font-size: clamp(40px, 12vw, 64px); font-weight: 600; letter-spacing: -0.04em; text-transform: none; line-height: 1.05; }
+}
+@media (max-width: 360px) {
+  #site-nav .nav__cta { padding: 0 12px; }
+  #site-nav .nav__cta .m-btn__label { font-size: 11px; letter-spacing: 0.03em; }
+  #site-nav .nav__logo { gap: 6px; font-size: 20px; }
+  #site-nav .nav__mark { width: 24px; height: 24px; }
+}
+}
+</style>
+<style data-8b-part="section:site-footer">
+@layer sections {
+#site-footer { padding: 72px var(--space-1) 28px; }
+#site-footer .ft__top { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px 48px; }
+#site-footer .ft__mark { grid-column: 1 / -1; }
+#site-footer .ft__mark { font-size: min(24vw, calc((100vw - 2 * var(--space-1)) / (var(--len) * 0.455))); padding-bottom: 0.04em; }
+#site-footer .ft__line { margin-top: 0; }
+#site-footer .ft__mail { display: inline-block; margin-top: 10px; font-family: var(--font-1); font-size: clamp(28px, 3.4vw, 48px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.1; }
+#site-footer .ft__nav li { padding: 14px 0 12px; }
+#site-footer .ft__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; color: var(--color-4); }
+#site-footer .ft__social { display: flex; flex-wrap: wrap; gap: 18px; }
+@media (max-width: 760px) { #site-footer .ft__top { grid-template-columns: 1fr; } }
+}
+</style>
 <style data-8b-part="pilot">
 @layer sections {
-.pn { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; background: color-mix(in srgb, var(--color-1) 88%, transparent); backdrop-filter: blur(10px); }
-.pn__logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-1); font-size: 22px; font-weight: 600; letter-spacing: -0.04em; }
-.pn__logo img { width: 28px; height: 28px; }
-@media (max-width: 600px) { .pn .m-btn { padding: 0 14px; } .pn .m-btn__label { font-size: 11px; } }
 
+main { padding-top: 68px; }
 section { padding-block: clamp(56px, 8vw, 112px); }
 .kick { color: var(--color-7); }
 .lead { color: var(--color-4); max-width: 34em; }
@@ -183,6 +225,7 @@ section { padding-block: clamp(56px, 8vw, 112px); }
 .rv__row .tag { padding: 4px 10px; border-radius: 999px; background: #F3F1FE; color: var(--color-7); }
 .rv__bars { grid-column: 1 / -1; display: grid; gap: 6px; }
 .bar { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 10px; }
+.bar span { font-family: var(--font-2); font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em; text-transform: none; }
 .bar i { display: block; height: 10px; border-radius: 5px; background: #ECEAF8; position: relative; overflow: hidden; }
 .bar i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: 5px; background: var(--c, #C9C3F3); }
 .bar.after i::after { --c: linear-gradient(90deg, #8B7CF6, #6558F5); }
@@ -243,7 +286,6 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
 .cta { text-align: center; display: grid; justify-items: center; gap: 22px; }
 .cta h2 { max-width: 18ch; }
 .cta__acts { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.ft { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px 40px; border-top: 1px solid var(--color-6); color: var(--color-4); }
 /* motion */
 @media (prefers-reduced-motion: no-preference) {
   .js .rise { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.7,.1,1), transform .8s cubic-bezier(.2,.7,.1,1); transition-delay: calc(var(--d, 0) * 90ms); }
@@ -275,9 +317,20 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<header class="pn wrap">
-  <a class="pn__logo" href="/"><img src="favicon.svg" alt="" width="28" height="28">Pipeleap</a>
-  <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Apply for a founding pilot</span></a>
+<header id="site-nav" class="nav" data-8b-section="navigation">
+  <a class="nav__logo" href="/#opening"><img class="nav__mark" src="favicon.svg" alt="" width="28" height="28">Pipeleap</a>
+  <nav aria-label="Main">
+    <ul class="nav__list" id="nav-list">
+      <li class="nav__item"><a class="m-link m-text-3" href="/#selection">The problem</a></li>
+      <li class="nav__item"><a class="m-link m-text-3" href="/#strands">Capabilities</a></li>
+      <li class="nav__item"><a class="m-link m-text-3" href="/#submit">How it works</a></li>
+      <li class="nav__item"><a class="m-link m-text-3" href="/#jury">Solutions</a></li>
+      <li class="nav__item"><a class="m-link m-text-3" href="/#passes">Integrations</a></li>
+      <li class="nav__item"><a class="m-link m-text-3 nav__pilot" href="/pilot" aria-current="page">Founding pilot</a></li>
+    </ul>
+  </nav>
+  <a class="m-btn nav__cta" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Book a walkthrough</span></a>
+  <button class="m-btn-2 nav__menu" type="button" aria-expanded="false" aria-controls="nav-list"><span class="m-btn__label" data-open-label="Close">Menu</span></button>
 </header>
 <main>
   <section class="hero wrap">
@@ -345,10 +398,60 @@ input[type=range] { width: 100%; accent-color: var(--color-7); }
     </div>
   </section>
 </main>
-<footer class="ft wrap m-text-3">
-  <span>Pipeleap · Less admin. More selling time.</span>
-  <a class="m-link" href="mailto:info@pipeleap.com">info@pipeleap.com</a>
+<footer id="site-footer" class="ft" data-8b-section="footer">
+  <div class="ft__top">
+    <p class="ft__mark m-text-7" style="--len:8" data-8b-motion="gate">Pipeleap</p>
+    <div>
+      <p class="ft__line m-text-2">Less admin. More selling time.</p>
+      <a class="ft__mail m-link" href="mailto:info@pipeleap.com">info@pipeleap.com</a>
+    </div>
+    <nav class="ft__nav" aria-label="Footer">
+      <ul class="m-text-3">
+        <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="/#strands" class="m-link">Capabilities</a></li>
+        <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="/#submit" class="m-link">How it works</a></li>
+        <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="/#passes" class="m-link">Integrations</a></li>
+        <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener" class="m-link">Book a walkthrough</a></li>
+        <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="/pilot" class="m-link">Founding pilot</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="ft__bottom m-text-3">
+    <ul class="ft__social">
+      <li><a class="m-link" href="https://app.pipeleap.com/">Sign in</a></li>
+    </ul>
+    <p>© 2026 Pipeleap · Design: <a href="https://8b.com/" style="color:inherit" data-8b-credit>8B</a></p>
+  </div>
 </footer>
+<script data-8b-part="section-script:site-nav">
+(() => {
+  const nav = document.getElementById('site-nav');
+  const toggle = nav.querySelector('.nav__menu');
+  const label = toggle.querySelector('.m-btn__label');
+  const openText = label.dataset.openLabel, closedText = label.textContent;
+  const setOpen = open => {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    label.textContent = open ? openText : closedText;
+    if (open) window.motionKit?.wheel?.stop(); else window.motionKit?.wheel?.start();
+  };
+  toggle.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
+  nav.querySelectorAll('.nav__list a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+  addEventListener('keydown', event => { if (event.key === 'Escape' && nav.classList.contains('is-open')) { setOpen(false); toggle.focus(); } });
+  let last = scrollY, travel = 0;
+  const onScroll = () => {
+    const y = scrollY, delta = y - last;
+    last = y;
+    if (delta && Math.sign(delta) !== Math.sign(travel)) travel = 0;
+    travel += delta;
+    nav.classList.toggle('is-scrolled', y > 40);
+    if (y < 120) nav.classList.remove('is-hidden');
+    else if (travel > 40) nav.classList.add('is-hidden');
+    else if (travel < -40) nav.classList.remove('is-hidden');
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
