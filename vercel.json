@@ -1,3 +1,85 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/pricing",
+      "destination": "/pilot",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/platform",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/integrations",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sales-operations-platform",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/outbound-automation",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/outbound-operating-system",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-sales",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/architecture",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sales-ops-audit",
+      "destination": "/pilot",
+      "permanent": true
+    },
+    {
+      "source": "/gtm-audit",
+      "destination": "/pilot",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
