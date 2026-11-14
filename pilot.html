@@ -188,6 +188,13 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   #site-nav .nav__mark { width: 24px; height: 24px; }
 }
 }
+
+@media (max-width: 340px) { #site-nav .nav__logo { font-size: 0; gap: 0; } #site-nav .nav__mark { width: 28px; height: 28px; } }
+@media (pointer: coarse) { .m-link { padding-block: 10px 6px; } #site-footer .ft__nav a, #site-footer .ft__social a { display: inline-block; padding-block: 8px; } }
+
+#site-nav .nav__cta { flex: none; }
+#site-nav .nav__logo { min-width: 0; }
+@media (pointer: coarse) { [data-8b-credit] { display: inline-block; padding-block: 8px; } }
 </style>
 <style data-8b-part="section:site-footer">
 @layer sections {

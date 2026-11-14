@@ -188,6 +188,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   #site-nav .nav__mark { width: 24px; height: 24px; }
 }
 }
+
+/* responsive fixes */
+@media (max-width: 1100px) and (min-width: 761px) { #passes .ps__list { grid-template-columns: 1fr 1fr; } #passes .ps__ticket:last-child { grid-column: 1 / -1; } }
+#passes .ps__stub { flex-wrap: wrap; }
+#passes .ps__stub .m-btn { flex: none; }
+@media (max-width: 340px) { #site-nav .nav__logo { font-size: 0; gap: 0; } #site-nav .nav__mark { width: 28px; height: 28px; } }
+@media (pointer: coarse) { .m-link { padding-block: 10px 6px; } #site-footer .ft__nav a, #site-footer .ft__social a { display: inline-block; padding-block: 8px; } }
+
+#site-nav .nav__cta { flex: none; }
+#site-nav .nav__logo { min-width: 0; }
+@media (pointer: coarse) { [data-8b-credit] { display: inline-block; padding-block: 8px; } }
 </style>
 <style data-8b-part="section:opening">
 @layer sections {
@@ -443,7 +454,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #passes .ps__lead { max-width: 26em; color: var(--color-4); }
 #passes .ps__switch { display: flex; gap: 8px; }
 #passes .ps__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-@media (max-width: 1100px) and (min-width: 901px) { #passes .ps__list { grid-template-columns: 1fr 1fr; } #passes .ps__ticket:last-child { grid-column: 1 / -1; } }
+
 #passes .ps__ticket { display: grid; grid-template-rows: 1fr auto; }
 #passes .ps__body { display: grid; gap: 12px; align-content: start; padding: 24px 24px 28px; }
 #passes .ps__span { color: var(--color-4); }
