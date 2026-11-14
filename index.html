@@ -168,6 +168,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #site-nav .nav__mark { width: 28px; height: 28px; flex: none; }
 #site-nav .nav__list { display: flex; flex: 1; justify-content: center; gap: clamp(18px, 3.4vw, 52px); }
 #site-nav .nav__item a { padding-block: 6px; }
+#site-nav .nav__pilot { color: var(--color-7); }
+.ct__pilot { display: table; margin-top: 16px; color: var(--color-7); }
+#site-nav .nav__item a { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 761px) { #site-nav .nav__list { gap: clamp(12px, 1.8vw, 24px); } #site-nav .nav__item a { font-size: 11.5px; letter-spacing: 0.04em; } }
 #site-nav .nav__menu { display: none; }
 @media (max-width: 900px) {
   #site-nav .nav__menu { display: none; }
@@ -684,6 +688,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
       <li class="nav__item"><a class="m-link m-text-3" href="#submit">How it works</a></li>
       <li class="nav__item"><a class="m-link m-text-3" href="#jury">Solutions</a></li>
       <li class="nav__item"><a class="m-link m-text-3" href="#passes">Integrations</a></li>
+      <li class="nav__item"><a class="m-link m-text-3 nav__pilot" href="/pilot">Founding pilot</a></li>
     </ul>
   </nav>
   <a class="m-btn nav__cta" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Book a walkthrough</span></a>
@@ -1132,6 +1137,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         <p class="ct__line m-text-2">You don’t need more sales tools. You need more value from the tools you have.</p>
         <p class="m-text" style="margin:16px 0 24px;color:var(--color-4)">A walkthrough is a working session on your setup, not a generic demo.</p>
         <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Book a Pipeleap walkthrough</span></a>
+        <a class="m-link m-text-3 ct__pilot" href="/pilot">Or apply for a free founding pilot →</a>
       </div>
       <dl class="ct__list">
         <div><dt class="m-text-3">Your stack today</dt><dd class="m-text">Which tools you run and how your reps move between them.</dd></div>
@@ -1157,6 +1163,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
         <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="#submit" class="m-link">How it works</a></li>
         <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="#passes" class="m-link">Integrations</a></li>
         <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener" class="m-link">Book a walkthrough</a></li>
+        <li class="ruled" data-8b-motion="rule" data-8b-enter="95%"><a href="/pilot" class="m-link">Founding pilot</a></li>
       </ul>
     </nav>
   </div>
