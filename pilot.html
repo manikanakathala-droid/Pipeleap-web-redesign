@@ -1,0 +1,378 @@
+<!doctype html>
+<!--
+  Free website template by 8B: https://8b.com/templates/cut-short/
+  Source: https://github.com/8bsite/film-festival-website-template
+  MIT License (code) https://8b.com/ · Fonts: Google Fonts (OFL)
+  One HTML file, no build step. Notes for people and AI agents: README.md and AGENTS.md.
+  Scroll motion: CSS scroll-driven animations and an inline script, no libraries. A GSAP build of this page: index.gsap.html.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founding pilot · Pipeleap</title>
+<meta name="description" content="A free 30-day founding pilot: see your reps' real selling time before and after Pipeleap, and help set the price.">
+<meta name="generator" content="8B Templates">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Founding pilot · Pipeleap">
+<meta property="og:description" content="A free 30-day founding pilot: see your reps' real selling time before and after, and help set the price.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/stacksansheadline/v1/1Ptyg9jZXvmMnkLnuURbaukKZJTyrDV38aevGw.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/stacksansnotch/v5/TwMY-JcVXlQd3ooGEx9EbUzgioTr5BY5lEpidqlSR8fQuS2eEmY.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/stacksanstext/v1/kJErBuAJ-Q0hiGPmzHEu345X1JJnCry4.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* latin-ext */
+@font-face {
+  font-family: 'Stack Sans Headline';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/stacksansheadline/v1/1Ptyg9jZXvmMnkLnuURbaukKZJTyrDV38amvG4w-.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Stack Sans Headline';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/stacksansheadline/v1/1Ptyg9jZXvmMnkLnuURbaukKZJTyrDV38aevGw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Stack Sans Notch';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/stacksansnotch/v5/TwMY-JcVXlQd3ooGEx9EbUzgioTr5BY5lEpidqlSR8fQuS2QEmbKBw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Stack Sans Notch';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/stacksansnotch/v5/TwMY-JcVXlQd3ooGEx9EbUzgioTr5BY5lEpidqlSR8fQuS2eEmY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Stack Sans Text';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/stacksanstext/v1/kJErBuAJ-Q0hiGPmzHEu345X1JJnBLy4NY8.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Stack Sans Text';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/stacksanstext/v1/kJErBuAJ-Q0hiGPmzHEu345X1JJnCry4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style data-8b-part="layers">
+@layer tokens, base, atoms, layout, sections, scenes;
+</style>
+<style data-8b-part="tokens">
+@layer tokens {
+:root {
+  --color-1: #F7F7FB;
+  --color-2: #14151C;
+  --color-3: #FFFFFF;
+  --color-4: #5C5F6B;
+  --color-5: #B9BAC6;
+  --color-6: #E3E1F0;
+  --color-7: #6558F5;
+  --font-1: "Stack Sans Headline", "Stack Sans Headline Fallback", Arial, sans-serif;
+  --font-2: "Stack Sans Text", "Stack Sans Text Fallback", Arial, sans-serif;
+  --font-3: "Stack Sans Notch", "Stack Sans Notch Fallback", Arial, sans-serif;
+  --radius-1: 8px;
+  --radius-2: 999px;
+  --space-1: clamp(16px, 2.2vw, 28px);
+  --space-2: clamp(96px, 12vw, 176px);
+}
+}
+</style>
+<style data-8b-part="base">
+@layer base {
+@font-face { font-family: "Stack Sans Headline Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"); font-weight: 550 799; size-adjust: 99.9%; ascent-override: 100.1%; descent-override: 30%; line-gap-override: 0%; }
+@font-face { font-family: "Stack Sans Headline Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 104.2%; ascent-override: 96%; descent-override: 28.8%; line-gap-override: 0%; }
+@font-face { font-family: "Stack Sans Text Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 111.5%; ascent-override: 89.7%; descent-override: 26.9%; line-gap-override: 0%; }
+@font-face { font-family: "Stack Sans Notch Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 94.8%; ascent-override: 105.5%; descent-override: 31.7%; line-gap-override: 0%; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--color-1); }
+body { margin: 0; background: radial-gradient(60vw 50vh at 45% 0%, rgba(140, 124, 246, 0.26), transparent 70%), radial-gradient(50vw 60vh at 100% 85%, rgba(125, 185, 255, 0.34), transparent 70%), radial-gradient(40vw 50vh at 0% 95%, rgba(255, 200, 160, 0.30), transparent 70%), var(--color-1); background-attachment: fixed; color: var(--color-2); font-family: var(--font-2); font-size: 16px; line-height: 1.5; font-weight: 400; overflow-x: clip; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, p, ul, ol, figure, blockquote, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--color-7); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+</style>
+<style data-8b-part="system">
+@layer atoms {
+.m-text { font-family: var(--font-2); font-size: 16px; line-height: 1.5; font-weight: 400; letter-spacing: 0; text-transform: none; font-style: normal; }
+.m-text-2 { font-family: var(--font-2); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.35; font-weight: 500; letter-spacing: -0.01em; text-transform: none; font-style: normal; }
+.m-text-3 { font-family: var(--font-3); font-size: 12.5px; line-height: 1.35; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-style: normal; }
+.m-text-4 { font-family: var(--font-1); font-size: 120px; line-height: 0.86; font-weight: 600; letter-spacing: -0.045em; text-transform: uppercase; font-style: normal; }
+.m-text-5 { font-family: var(--font-1); font-size: clamp(34px, 4.6vw, 68px); line-height: 1; font-weight: 500; letter-spacing: -0.035em; text-transform: none; font-style: normal; }
+.m-text-6 { font-family: var(--font-1); font-size: clamp(22px, 2vw, 28px); line-height: 1.08; font-weight: 500; letter-spacing: -0.02em; text-transform: none; font-style: normal; }
+.m-text-7 { font-family: var(--font-1); font-size: 200px; line-height: 0.9; font-weight: 600; letter-spacing: -0.05em; text-transform: none; font-style: normal; }
+
+.m-btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border-radius: var(--radius-2); background: var(--color-7); color: #fff; overflow: hidden; }
+.m-btn__label { font-family: var(--font-3); font-size: 12.5px; line-height: 1; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-style: normal; white-space: nowrap; }
+.m-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-2); clip-path: inset(50% 0 50% 0); transition: clip-path .45s cubic-bezier(.2, .7, .1, 1); }
+.m-btn-2 { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 18px; border-radius: var(--radius-2); border: 1px solid var(--color-4); color: var(--color-2); overflow: hidden; }
+.m-btn-2::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-2); clip-path: inset(50% 0 50% 0); transition: clip-path .45s cubic-bezier(.2, .7, .1, 1); }
+.m-btn-2 .m-btn__label { transition: color .3s; }
+.m-btn-2[aria-pressed="true"] { background: var(--color-2); color: var(--color-1); border-color: var(--color-2); }
+.m-link { position: relative; display: inline-block; padding-bottom: 3px; }
+.m-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform-origin: left; }
+.m-icon { display: inline-grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: var(--radius-1); background: var(--color-2); color: var(--color-1); overflow: hidden; }
+.m-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.m-surface { background: var(--color-3); color: var(--color-2); border-radius: var(--radius-1); }
+@media (hover: hover) {
+  .m-btn:hover::before, .m-btn-2:hover::before { clip-path: inset(0 0 0 0); }
+  .m-btn-2:hover { color: var(--color-1); }
+  .m-link:hover::after { animation: m-link-cut .6s cubic-bezier(.6, 0, .2, 1); }
+  .m-icon:hover svg { animation: m-icon-cut .55s cubic-bezier(.6, 0, .2, 1); }
+}
+@keyframes m-link-cut { 0% { transform: scaleX(1); transform-origin: right; } 49% { transform: scaleX(0); transform-origin: right; } 51% { transform: scaleX(0); transform-origin: left; } 100% { transform: scaleX(1); transform-origin: left; } }
+@keyframes m-icon-cut { 0% { transform: translateX(0); } 45% { transform: translateX(140%); } 46% { transform: translateX(-140%); } 100% { transform: translateX(0); } }
+}
+</style>
+<style data-8b-part="layout">
+@layer layout {
+.wrap { padding-inline: var(--space-1); }
+.ruled { position: relative; }
+.ruled::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--color-6); transform-origin: left; transform: scaleX(var(--rule, 1)); }
+}
+</style>
+<style data-8b-part="pilot">
+@layer sections {
+.pn { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; background: color-mix(in srgb, var(--color-1) 88%, transparent); backdrop-filter: blur(10px); }
+.pn__logo { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-1); font-size: 22px; font-weight: 600; letter-spacing: -0.04em; }
+.pn__logo img { width: 28px; height: 28px; }
+.pn__back { color: var(--color-4); margin-right: auto; margin-left: 24px; }
+@media (max-width: 600px) { .pn__back { display: none; } .pn .m-btn { padding: 0 14px; } .pn .m-btn__label { font-size: 11px; } }
+
+section { padding-block: clamp(56px, 8vw, 112px); }
+.kick { color: var(--color-7); }
+.lead { color: var(--color-4); max-width: 34em; }
+.muted { color: var(--color-4); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; padding-top: clamp(40px, 6vw, 88px); }
+.hero__copy { display: grid; gap: 22px; }
+.hero h1 { max-width: 15ch; }
+.hero__acts { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 7px 12px; border-radius: 999px; background: var(--color-3); border: 1px solid var(--color-6); }
+.rv { padding: clamp(20px, 2.4vw, 30px); display: grid; gap: 18px; box-shadow: 0 30px 60px -30px rgba(67, 56, 202, .28); }
+.rv__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.rv__row { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; align-items: center; padding-top: 14px; border-top: 1px solid var(--color-6); }
+.rv__row .tag { padding: 4px 10px; border-radius: 999px; background: #F3F1FE; color: var(--color-7); }
+.rv__bars { grid-column: 1 / -1; display: grid; gap: 6px; }
+.bar { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 10px; }
+.bar i { display: block; height: 10px; border-radius: 5px; background: #ECEAF8; position: relative; overflow: hidden; }
+.bar i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: 5px; background: var(--c, #C9C3F3); }
+.bar.after i::after { --c: linear-gradient(90deg, #8B7CF6, #6558F5); }
+@media (prefers-reduced-motion: no-preference) { .bar i::after { animation: grow 1.6s cubic-bezier(.2,.7,.1,1) both; } .bar.after i::after { animation-delay: .5s; } }
+@keyframes grow { from { width: 0; } }
+.rv__cost { background: var(--color-2); color: var(--color-1); border-radius: var(--radius-1); padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.rv__cost .m-text-3 { color: #B9B4F7; }
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
+
+/* calculator */
+.calc { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.calc__copy { display: grid; gap: 16px; }
+.calc__box { padding: clamp(20px, 2.4vw, 30px); display: grid; gap: 18px; }
+.field { display: grid; gap: 8px; }
+.field__top { display: flex; justify-content: space-between; align-items: baseline; }
+.field output { font-family: var(--font-1); font-size: 22px; font-weight: 600; }
+input[type=range] { width: 100%; accent-color: var(--color-7); }
+.calc__out { border-top: 1px solid var(--color-6); padding-top: 18px; display: grid; gap: 4px; }
+.calc__num { font-family: var(--font-1); font-size: clamp(44px, 6vw, 72px); font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: var(--color-7); }
+@media (max-width: 900px) { .calc { grid-template-columns: 1fr; } }
+
+/* doubt */
+.doubt { display: grid; gap: 18px; max-width: 900px; }
+.doubt blockquote { font-family: var(--font-1); font-size: clamp(26px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -0.03em; border-left: 3px solid var(--color-7); padding-left: 20px; }
+
+/* steps */
+.steps__head { display: grid; gap: 12px; margin-bottom: 32px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.step { padding: 24px; display: grid; gap: 10px; align-content: start; }
+.step__n { font-family: var(--font-1); font-size: 40px; font-weight: 600; color: #E4E0FB; line-height: 1; }
+.step:last-child { background: var(--color-7); color: #fff; }
+.step:last-child .muted, .step:last-child .m-text-3 { color: #E4E0FF; }
+.step:last-child .step__n { color: rgba(255,255,255,.4); }
+.steps__note { margin-top: 18px; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+
+/* who + isn't */
+.who { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(28px, 5vw, 72px); }
+.who__copy { display: grid; gap: 14px; align-content: start; }
+.isnt { display: grid; gap: 12px; }
+.isnt div { padding: 18px 20px; display: grid; gap: 4px; }
+.isnt b { font-family: var(--font-1); font-size: 20px; font-weight: 500; letter-spacing: -0.02em; }
+@media (max-width: 860px) { .who { grid-template-columns: 1fr; } }
+
+/* founding */
+.fd { background: var(--color-2); color: var(--color-1); border-radius: 16px; padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 4vw, 56px); }
+.fd .kick { color: #B9B4F7; }
+.fd__copy { display: grid; gap: 16px; align-content: start; }
+.fd__copy p { color: #C9C8D6; max-width: 34em; }
+.fd__copy strong { color: #fff; }
+.fd__ask { display: grid; gap: 12px; align-content: start; }
+.fd__ask li { display: flex; gap: 12px; padding: 14px 16px; border-radius: var(--radius-1); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
+.fd__ask li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 7px; border-radius: 50%; background: var(--color-7); }
+.fd__note { color: #8F8EA3; }
+@media (max-width: 860px) { .fd { grid-template-columns: 1fr; } }
+
+/* cta */
+.cta { text-align: center; display: grid; justify-items: center; gap: 22px; }
+.cta h2 { max-width: 18ch; }
+.cta__acts { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.ft { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px 40px; border-top: 1px solid var(--color-6); color: var(--color-4); }
+}
+</style>
+</head>
+<body>
+<header class="pn wrap">
+  <a class="pn__logo" href="/"><img src="favicon.svg" alt="" width="28" height="28">Pipeleap</a>
+  <a class="pn__back m-text-3 m-link" href="/">Back to the site</a>
+  <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Apply for a founding pilot</span></a>
+</header>
+<main>
+  <section class="hero wrap">
+    <div class="hero__copy">
+      <p class="kick m-text-3">[Founding pilot · free for 30 days]</p>
+      <h1 class="m-text-5">Your CRM knows what your reps sold. Not what they spent the day doing.</h1>
+      <p class="lead m-text-2">Pipeleap logs your reps' activity, writes their follow-ups and shows the hours they get back. Try it free for 30 days.</p>
+      <div class="hero__acts">
+        <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Apply for a founding pilot</span></a>
+        <a class="m-link m-text-3" href="#how">How the pilot works</a>
+      </div>
+      <div class="chips m-text-3"><span class="chip">3 to 10 reps</span><span class="chip">No charge</span><span class="chip">You help set the price</span></div>
+    </div>
+    <div class="rv m-surface" aria-label="What the day-30 review shows">
+      <div class="rv__top"><p class="m-text-6">Your day-30 review</p><p class="m-text-3 muted">Measured, not surveyed</p></div>
+      <div class="rv__row">
+        <p class="m-text"><b>Selling time</b></p><span class="tag m-text-3">Before → after</span>
+        <div class="rv__bars">
+          <div class="bar m-text-3 muted"><span>Day 1</span><i style="--w:38%"></i></div>
+          <div class="bar after m-text-3 muted"><span>Day 30</span><i style="--w:72%"></i></div>
+        </div>
+      </div>
+      <div class="rv__row"><p class="m-text"><b>Hours back per rep</b></p><span class="tag m-text-3">Your number</span></div>
+      <div class="rv__row"><p class="m-text"><b>Conversations a week</b></p><span class="tag m-text-3">Your number</span></div>
+      <div class="rv__row"><p class="m-text"><b>New pipeline added</b></p><span class="tag m-text-3">Your number</span></div>
+      <div class="rv__cost"><span class="m-text"><b>What it cost to run, per rep</b></span><span class="m-text-3">Shown to you</span></div>
+      <p class="m-text-3 muted">Illustrative. Your review uses your team's numbers.</p>
+    </div>
+  </section>
+
+  <section class="calc wrap" id="count">
+    <div class="calc__copy">
+      <p class="kick m-text-3">[The problem, in your numbers]</p>
+      <h2 class="m-text-5">Count last week's admin</h2>
+      <p class="lead m-text-2">How many hours did one rep spend last week logging calls, updating deals and rewriting follow-ups?</p>
+      <p class="muted m-text">Multiply by your team, then by 52. That's selling time you lose every year.</p>
+    </div>
+    <div class="calc__box m-surface">
+      <label class="field"><span class="field__top"><span class="m-text-3 muted">Admin hours per rep, last week</span><output id="hOut">6</output></span><input id="h" type="range" min="1" max="20" value="6"></label>
+      <label class="field"><span class="field__top"><span class="m-text-3 muted">Reps on your team</span><output id="rOut">6</output></span><input id="r" type="range" min="1" max="10" value="6"></label>
+      <div class="calc__out">
+        <span class="calc__num" id="yr">1,872</span>
+        <span class="m-text muted">hours of selling time lost a year</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="doubt wrap">
+    <p class="kick m-text-3">[Fair question]</p>
+    <blockquote>This probably sounds like every other tool that promises to save your reps time.</blockquote>
+    <p class="lead m-text-2">We measure it. Pipeleap records selling versus admin time from what reps actually do. You see both numbers, before and after.</p>
+  </section>
+
+  <section class="wrap" id="how">
+    <div class="steps__head">
+      <p class="kick m-text-3">[How the pilot works]</p>
+      <h2 class="m-text-5">30 days, three steps</h2>
+    </div>
+    <ol class="steps">
+      <li class="step m-surface"><span class="step__n">01</span><p class="m-text-3">Week 1</p><p class="m-text-6">Baseline</p><p class="muted m-text">We connect your tools and record where time goes today.</p></li>
+      <li class="step m-surface"><span class="step__n">02</span><p class="m-text-3">Weeks 2 to 4</p><p class="m-text-6">Reps work in Pipeleap</p><p class="muted m-text">Admin logged, follow-ups drafted, stalled deals flagged.</p></li>
+      <li class="step m-surface"><span class="step__n">03</span><p class="m-text-3">Day 30</p><p class="m-text-6">Before and after</p><p class="muted m-text">Hours back, conversations, new pipeline, and what it cost to run.</p></li>
+    </ol>
+    <p class="steps__note muted m-text">Tell us the one number you want to move. We'll build the review around it.</p>
+  </section>
+
+  <section class="who wrap">
+    <div class="who__copy">
+      <p class="kick m-text-3">[Who it's for]</p>
+      <h2 class="m-text-5">Sales managers running 3 to 10 reps</h2>
+      <p class="lead m-text-2">If your reps spend Fridays cleaning up the CRM, this is for you.</p>
+      <p class="muted m-text">Tried reminders and stricter process already? The pilot shows how to stop needing them.</p>
+    </div>
+    <div class="isnt">
+      <div class="m-surface"><b>Not a new CRM</b><span class="muted m-text">Your CRM stays your record. Pipeleap fills it in.</span></div>
+      <div class="m-surface"><b>Not a replacement for your tools</b><span class="muted m-text">You keep the tools and plans you have. Pipeleap works on top.</span></div>
+      <div class="m-surface"><b>Not an automation bot</b><span class="muted m-text">It never sends, clicks or posts on social networks for your reps.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="fd">
+      <div class="fd__copy">
+        <p class="kick m-text-3">[Founding teams]</p>
+        <h2 class="m-text-5">Be one of the teams that sets the price</h2>
+        <p class="m-text-2"><strong>No charge during the pilot.</strong> We won't price Pipeleap until we know what it costs to run and what it gives back. For 30 days we measure both.</p>
+        <p class="m-text">At day 30 you see both numbers and help set the price.</p>
+      </div>
+      <div class="fd__ask">
+        <p class="m-text-3 kick">What we ask in return</p>
+        <ul class="m-text">
+          <li>Your reps use Pipeleap for the 30 days</li>
+          <li>Two 20-minute reviews with us</li>
+          <li>The one number you want to move</li>
+        </ul>
+        <p class="fd__note m-text-3">A few teams at a time, each set up by us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta wrap">
+    <h2 class="m-text-5">Would it be a bad idea to see your reps' real selling time for 30 days?</h2>
+    <div class="cta__acts">
+      <a class="m-btn" href="https://app.apollo.io/#/meet/b3a7c" target="_blank" rel="noopener"><span class="m-btn__label">Apply for a founding pilot</span></a>
+      <a class="m-btn-2" href="mailto:info@pipeleap.com?subject=One%20question%20about%20the%20pilot"><span class="m-btn__label">Ask us one question first</span></a>
+    </div>
+    <p class="muted m-text">Not ready? Tell us in one line if rep admin is on your radar. We'll say honestly if Pipeleap fits.</p>
+  </section>
+</main>
+<footer class="ft wrap m-text-3">
+  <span>Pipeleap · Less admin. More selling time.</span>
+  <a class="m-link" href="mailto:info@pipeleap.com">info@pipeleap.com</a>
+</footer>
+<script>
+(() => {
+  const h = document.getElementById('h'), r = document.getElementById('r');
+  const ho = document.getElementById('hOut'), ro = document.getElementById('rOut'), yr = document.getElementById('yr');
+  const up = () => { ho.textContent = h.value; ro.textContent = r.value; yr.textContent = (h.value * r.value * 52).toLocaleString('en-US'); };
+  h.addEventListener('input', up); r.addEventListener('input', up); up();
+})();
+</script>
+</body>
+</html>
