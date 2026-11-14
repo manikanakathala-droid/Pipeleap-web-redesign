@@ -1,0 +1,5 @@
+# managed by pipeleap-growth-loop
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pipeleap.com/sitemap.xml
