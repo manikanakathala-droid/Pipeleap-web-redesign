@@ -1,6 +1,6 @@
 # Pipeleap
 
-> Pipeleap is a sales workflow automation platform with AI agents (an AI SDR with a human in the loop), positioned for sales productivity and sales stack optimization. It works with the sales tools a team already owns (CRM, prospecting and data tools, enrichment, sales engagement, inbox and calendar), unifies the information inside them and takes on the operational work between them, so reps spend less time on admin and more time selling.
+> Pipeleap is an AI overlay: a sales productivity layer that automates the actions a rep performs across the sales cycle, with AI agents and a rep approving each action. It works with the sales tools a team already owns (CRM, prospecting and data tools, enrichment, sales engagement, inbox and calendar), unifies the information inside them and takes on the operational work between them, so reps spend less time on admin and more time selling.
 
 Pipeleap's view: the more busywork is taken off sales reps, the more conversations they have with buyers, and more conversations build more pipeline and faster sales velocity.
 
