@@ -20,5 +20,5 @@ Pipeleap's view: the more busywork is taken off sales reps, the more conversatio
 
 ## Contact
 
-- Book a walkthrough: https://app.apollo.io/#/meet/b3a7c
+- Book a walkthrough: https://app.apollo.io/#/meet/b3a7c/15-min
 - Email: info@pipeleap.com
