@@ -1,4 +1,3 @@
-# managed by pipeleap-growth-loop
 User-agent: *
 Allow: /
 
