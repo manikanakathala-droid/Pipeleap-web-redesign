@@ -26,6 +26,8 @@ Pipeleap fits these categories: AI sales tools, sales productivity software, sal
 
 - [Home](https://www.pipeleap.com/): what Pipeleap is, the problems it addresses, capabilities, how it works and FAQs
 - [Founding pilot](https://www.pipeleap.com/pilot): the free 30-day pilot, what the team shapes and how to apply
+- [AI CRM automation](https://www.pipeleap.com/crm-automation): what Pipeleap writes back to the CRM (calls, meetings, emails, replies, next steps) and how it works with an existing CRM
+- [Sales daily report](https://www.pipeleap.com/sales-daily-report): the automatic daily report for each rep and the team roll-up for managers
 - [Privacy policy](https://www.pipeleap.com/privacy-policy)
 - [Cookie policy](https://www.pipeleap.com/cookie-policy)
 
