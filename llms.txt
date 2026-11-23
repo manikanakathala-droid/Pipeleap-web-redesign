@@ -14,7 +14,13 @@ Pipeleap's view: the more busywork is taken off sales reps, the more conversatio
 
 ## What buyers call it
 
-Pipeleap fits these categories: AI sales tools, sales automation software, CRM automation and CRM workflow automation, AI for sales, sales productivity software, sales workflow automation, CRM data entry automation, AI SDR, sales engagement and revenue operations (RevOps) tools. It is not a CRM: it automates the work around the CRM a team already has.
+Pipeleap fits these categories: AI sales tools, sales productivity software, sales automation software, CRM automation and CRM workflow automation, AI for sales, AI SDR, sales engagement and revenue operations (RevOps) tools. It is not a CRM: it automates the work around the CRM a team already has.
+
+- Sales productivity: a sales productivity platform and rep efficiency software for B2B sales teams.
+- CRM automation and sync: automatic CRM logging of calls, meetings, emails and replies; sales data entry automation; prospecting data synced to the CRM.
+- Admin time reduction: removes sales admin work and manual data entry so reps get more selling time, measured per rep.
+- Workflow automation: automated account research, AI-drafted outreach and follow-ups, meeting preparation and post-call follow-up, with a rep approving each action.
+- Who it is for: account executives, SDRs and BDRs, sales managers, sales operations and RevOps teams in B2B companies.
 
 ## Pages
 
