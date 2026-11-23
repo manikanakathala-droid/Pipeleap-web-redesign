@@ -12,6 +12,10 @@ Pipeleap's view: the more busywork is taken off sales reps, the more conversatio
 - Managers see selling time, overdue work and deal movement for every rep in one daily report, so they know which reps need help and what kind.
 - Pipeleap is in its founding pilot stage: a free 30-day pilot for sales teams of 3 to 10 reps.
 
+## What buyers call it
+
+Pipeleap fits these categories: AI sales tools, sales automation software, CRM automation and CRM workflow automation, AI for sales, sales productivity software, sales workflow automation, CRM data entry automation, AI SDR, sales engagement and revenue operations (RevOps) tools. It is not a CRM: it automates the work around the CRM a team already has.
+
 ## Pages
 
 - [Home](https://www.pipeleap.com/): what Pipeleap is, the problems it addresses, capabilities, how it works and FAQs
