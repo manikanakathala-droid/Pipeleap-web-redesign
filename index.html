@@ -504,6 +504,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 #site-footer .ft__nav li { padding: 14px 0 12px; }
 #site-footer .ft__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; color: var(--color-4); }
 #site-footer .ft__social { display: flex; flex-wrap: wrap; gap: 18px; }
+#site-footer .ft__linkedin { display: block; width: fit-content; margin-top: 18px; color: inherit; opacity: 0.75; transition: opacity 0.2s, color 0.2s; }
+#site-footer .ft__linkedin:hover, #site-footer .ft__linkedin:focus-visible { opacity: 1; color: #0A66C2; }
+#site-footer .ft__linkedin svg { display: block; }
 @media (max-width: 760px) { #site-footer .ft__top { grid-template-columns: 1fr; } }
 }
 </style>
@@ -1181,6 +1184,7 @@ if (matchMedia('(prefers-reduced-motion: no-preference)').matches && CSS.support
     <div>
       <p class="ft__line m-text-2">Less admin. More selling time.</p>
       <a class="ft__mail m-link" href="mailto:info@pipeleap.com">info@pipeleap.com</a>
+      <a class="ft__linkedin" href="https://www.linkedin.com/in/rajeev-manik" target="_blank" rel="noopener" aria-label="Rajeev Manik on LinkedIn"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
     </div>
     <nav class="ft__nav" aria-label="Footer">
       <ul class="m-text-3">
